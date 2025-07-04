@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 
 class PageViewItem extends StatelessWidget {
- const  PageViewItem(
-      {super.key,
-      required this.backgorundimage,
-      required this.image,
-      required this.title_ar,
-      required this.subtilte, required this.isVisiable});
-  final String backgorundimage, image, title_ar, subtilte;
- final bool isVisiable;
+  const PageViewItem({
+    super.key,
+    required this.backgorundimage,
+    required this.image,
+    required this.subtilte,
+    required this.isVisiable,
+    required this.title,
+  });
+  final String backgorundimage, image, subtilte;
+  final Widget title;
+  final bool isVisiable;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,11 +38,15 @@ class PageViewItem extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                 )),
             Visibility(
-              visible:isVisiable ,
+              visible: isVisiable,
               child: Positioned(
                 top: 40,
                 right: 20,
-                child: Text('تخط'),
+                child: Text(
+                  'تخط',
+                  style:
+                      TextStyless.regular13.copyWith(color: Color(0xff949d9e)),
+                ),
               ),
             )
           ],
@@ -46,18 +54,18 @@ class PageViewItem extends StatelessWidget {
         SizedBox(
           height: 64,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('مرحبًا بك في'),
-            Text('HUB'),
-            Text('Fruit'),
-          ],
-        ),
+        title,
         SizedBox(
           height: 24,
         ),
-        Text(textAlign: TextAlign.center, subtilte)
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32),
+          child: Text(
+            textAlign: TextAlign.center,
+            subtilte,
+            style: TextStyless.semiBold13.copyWith(color: Color(0xff4e5456)),
+          ),
+        )
       ],
     );
   }

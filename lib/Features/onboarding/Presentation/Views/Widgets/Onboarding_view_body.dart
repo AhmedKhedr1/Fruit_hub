@@ -46,9 +46,8 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
         ),
         DotsIndicator(
           dotsCount: 2,
-          // position: currentpage.toDouble(),
           decorator: DotsDecorator(
-            size: const Size(9, 9),
+            size: const Size(11, 11),
             activeSize: const Size(11, 11),
             color: currentpage == 1
                 ? AppColors.primaryColor
