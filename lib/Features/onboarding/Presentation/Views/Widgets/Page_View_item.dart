@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruit_hub/Constant.dart';
+import 'package:fruit_hub/Core/services/shared_preferences_singelton.dart';
+import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
+import 'package:go_router/go_router.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -23,8 +27,7 @@ class PageViewItem extends StatelessWidget {
           children: [
             SvgPicture.asset(
               backgorundimage,
-              fit: BoxFit.fill,
-              width: double.infinity,
+              fit: BoxFit.cover,
               height: 544,
             ),
             Positioned(
@@ -37,16 +40,23 @@ class PageViewItem extends StatelessWidget {
                   width: 250,
                   fit: BoxFit.scaleDown,
                 )),
-            Visibility(
-              visible: isVisiable,
-              child: Positioned(
-                top: 40,
-                right: 20,
-                child: Text(
-                  'تخط',
-                  style:
-                      TextStyless.regular13.copyWith(color: Color(0xff949d9e)),
-                ),
+            Positioned(
+              top: 34,
+              right: 8,
+              child: Visibility(
+                visible: isVisiable,
+                child: GestureDetector(
+                    child: TextButton(
+                  onPressed: () {
+                     Prefs.setBool(KisOnBoardingViewSeen, true);
+                    GoRouter.of(context).go(AppRouter.Kloginview);
+                  },
+                  child: Text(
+                    'تخط',
+                    style: TextStyless.regular13
+                        .copyWith(color: Color(0xff949d9e)),
+                  ),
+                )),
               ),
             )
           ],

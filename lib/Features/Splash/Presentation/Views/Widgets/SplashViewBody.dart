@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruit_hub/Constant.dart';
+import 'package:fruit_hub/Core/services/shared_preferences_singelton.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:go_router/go_router.dart';
@@ -20,10 +22,15 @@ class _SplashviewbodyState extends State<Splashviewbody> {
   }
 
   void navigateToOnboarding() {
+    bool isOnboardinViewSeen = Prefs.getBool(KisOnBoardingViewSeen);
     Future.delayed(
       Duration(seconds: 2),
       () {
-        GoRouter.of(context).go(AppRouter.KOnboardingView);
+        if (isOnboardinViewSeen==true) {
+  GoRouter.of(context).go(AppRouter.Kloginview);
+}else{
+   GoRouter.of(context).go(AppRouter.KOnboardingView);
+}
       },
     );
 

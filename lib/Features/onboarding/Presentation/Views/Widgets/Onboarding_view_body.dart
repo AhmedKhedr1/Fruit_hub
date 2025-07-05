@@ -1,8 +1,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Constant.dart';
+import 'package:fruit_hub/Core/services/shared_preferences_singelton.dart';
+import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Widgets/OnBoarding_Page_View.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});
@@ -64,7 +68,10 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
             child: CustomButton(
               title: 'ابدأ الان',
-              onpressed: () {},
+              onpressed: () {
+                Prefs.setBool(KisOnBoardingViewSeen, true);
+                GoRouter.of(context).go(AppRouter.Kloginview);
+              },
             ),
           ),
         ),
