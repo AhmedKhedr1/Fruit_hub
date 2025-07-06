@@ -1,5 +1,6 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 
