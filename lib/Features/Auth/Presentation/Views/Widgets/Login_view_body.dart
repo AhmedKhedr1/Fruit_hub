@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 import 'package:fruit_hub/Core/widgets/CustomTextFormField.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
-import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/Donot_Have_Account.dart';
+import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/Have_And_Donot_Have_Account.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/Or_widget.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/SocialLoginButton.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -59,7 +61,13 @@ class LoginViewBody extends StatelessWidget {
             SizedBox(
               height: 34,
             ),
-            DonotHaveAccount(),
+            HaveAndDonotHaveAccount(
+              P1OfText: ' لا تمتلك حساب؟',
+              p2OfText: ' قم بانشاء حساب ',
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.KRegisterview);
+              },
+            ),
             SizedBox(
               height: 34,
             ),
