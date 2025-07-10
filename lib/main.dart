@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fruit_hub/Core/services/Getit__Services.dart';
 import 'package:fruit_hub/Core/services/shared_preferences_singelton.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
@@ -13,6 +14,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetIt();
   runApp(const FruitHub());
 }
 
