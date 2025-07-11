@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/Core/utils/App_Router.dart';
+import 'package:fruit_hub/Core/helper_Funcations/Buil_error.dart';
 import 'package:fruit_hub/Core/widgets/CustomTextFormField.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
+import 'package:fruit_hub/Core/widgets/Password_filed.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Cubits/Register_cubit/register_cubit.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/Have_And_Donot_Have_Account.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/TermsandCondition.dart';
@@ -16,9 +17,10 @@ class RegisterViewBody extends StatefulWidget {
 }
 
 class _RegisterViewBodyState extends State<RegisterViewBody> {
-  final GlobalKey<FormState>formkey=GlobalKey<FormState>();
-  AutovalidateMode autovalidateMode=AutovalidateMode.disabled;
-  late String UserName,email,password;
+  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  late String UserName, email, password;
+  late bool IsTermsAccepted = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,43 +29,42 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
         child: Form(
           key: formkey,
           autovalidateMode: autovalidateMode,
-          
           child: Column(
             children: [
               SizedBox(
                 height: 24,
               ),
               CustomTextFormField(
-                onSaved: (p0) {
-                  UserName=p0!;
-                },
-                  hint: 'الاسم كامل', keyboardType: TextInputType.name),
+                  onSaved: (p0) {
+                    UserName = p0!;
+                  },
+                  hint: 'الاسم كامل',
+                  keyboardType: TextInputType.name),
               SizedBox(
                 height: 16,
               ),
               CustomTextFormField(
-                onSaved: (p0) {
-                  email=p0!;
-                },
+                  onSaved: (p0) {
+                    email = p0!;
+                  },
                   hint: 'البريد الإلكتروني',
                   keyboardType: TextInputType.emailAddress),
               SizedBox(
                 height: 16,
               ),
-              CustomTextFormField(
-                onSaved: (p0) {
-                  password=p0!;
+              Passwordfield(
+                onSaved: (value) {
+                  password = value!;
                 },
-                  suffixIcon: Icon(
-                    Icons.remove_red_eye_rounded,
-                    color: Color(0xffC9CECF),
-                  ),
-                  hint: 'كلمة المرور',
-                  keyboardType: TextInputType.visiblePassword),
+              ),
               SizedBox(
                 height: 18,
               ),
-              Termsandcondition(),
+              Termsandcondition(
+                onCahange: (bool value) {
+                  IsTermsAccepted = value;
+                },
+              ),
               SizedBox(
                 height: 30,
               ),
@@ -72,7 +73,14 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 onpressed: () {
                   if (formkey.currentState!.validate()) {
                     formkey.currentState!.save();
-                    context.read<RegisterCubit>().CreateUserWithEmailAndPassword(email, password, UserName);
+                    if (IsTermsAccepted) {
+                      context
+                          .read<RegisterCubit>()
+                          .CreateUserWithEmailAndPassword(
+                              email, password, UserName);
+                    } else {
+                      ErrorBar(context, 'يجب قبول الشروط والأحكام');
+                    }
                     // Add your registration logic here
                   } else {
                     setState(() {

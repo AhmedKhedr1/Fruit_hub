@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/Core/helper_Funcations/Buil_error.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Cubits/Register_cubit/register_cubit.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/Register_view_body.dart';
@@ -19,9 +20,7 @@ class RegisterViewBlocConsumer extends StatelessWidget {
           if (state is RegisterSuccess) {
             GoRouter.of(context).go(AppRouter.Kloginview);
           } else if (state is RegisterFailure) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.message)),
-            );
+            ErrorBar(context, state.message);
           }
         },
         builder: (context, state) {
