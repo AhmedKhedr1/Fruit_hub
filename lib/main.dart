@@ -17,7 +17,7 @@ void main() async {
   setupGetIt();
   runApp(const FruitHub());
 }
-
+ 
 class FruitHub extends StatelessWidget {
   const FruitHub({super.key});
 

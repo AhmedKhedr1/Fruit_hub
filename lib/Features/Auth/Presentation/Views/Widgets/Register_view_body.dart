@@ -17,17 +17,18 @@ class RegisterViewBody extends StatefulWidget {
 }
 
 class _RegisterViewBodyState extends State<RegisterViewBody> {
-  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   late String UserName, email, password;
   late bool IsTermsAccepted = false;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: SingleChildScrollView(
         child: Form(
-          key: formkey,
+          key: _formkey,
           autovalidateMode: autovalidateMode,
           child: Column(
             children: [
@@ -71,8 +72,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               CustomButton(
                 title: 'إنشاء حساب جديد',
                 onpressed: () {
-                  if (formkey.currentState!.validate()) {
-                    formkey.currentState!.save();
+                  if (_formkey.currentState!.validate()) {
+                    _formkey.currentState!.save();
                     if (IsTermsAccepted) {
                       context
                           .read<RegisterCubit>()

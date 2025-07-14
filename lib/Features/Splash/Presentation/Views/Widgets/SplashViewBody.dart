@@ -27,7 +27,7 @@ class _SplashviewbodyState extends State<Splashviewbody> {
       Duration(seconds: 2),
       () {
         if (isOnboardinViewSeen==true) {
-  GoRouter.of(context).go(AppRouter.Kloginview);
+  GoRouter.of(context).go(AppRouter.KSignInview);
 }else{
    GoRouter.of(context).go(AppRouter.KOnboardingView);
 }

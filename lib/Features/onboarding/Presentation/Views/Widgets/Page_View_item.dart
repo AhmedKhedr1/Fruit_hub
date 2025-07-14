@@ -49,7 +49,7 @@ class PageViewItem extends StatelessWidget {
                     child: TextButton(
                   onPressed: () {
                      Prefs.setBool(KisOnBoardingViewSeen, true);
-                    GoRouter.of(context).go(AppRouter.Kloginview);
+                    GoRouter.of(context).go(AppRouter.KSignInview);
                   },
                   child: Text(
                     'تخط',

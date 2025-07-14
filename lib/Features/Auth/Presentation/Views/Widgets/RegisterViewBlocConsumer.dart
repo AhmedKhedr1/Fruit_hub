@@ -18,7 +18,7 @@ class RegisterViewBlocConsumer extends StatelessWidget {
       return BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
           if (state is RegisterSuccess) {
-            GoRouter.of(context).go(AppRouter.Kloginview);
+            GoRouter.of(context).go(AppRouter.KSignInview);
           } else if (state is RegisterFailure) {
             ErrorBar(context, state.message);
           }

@@ -70,7 +70,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
               title: 'ابدأ الان',
               onpressed: () {
                 Prefs.setBool(KisOnBoardingViewSeen, true);
-                GoRouter.of(context).go(AppRouter.Kloginview);
+                GoRouter.of(context).go(AppRouter.KSignInview);
               },
             ),
           ),

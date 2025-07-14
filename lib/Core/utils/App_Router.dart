@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:fruit_hub/Features/Auth/Presentation/Views/Login_view.dart';
+import 'package:fruit_hub/Features/Auth/Presentation/Views/SignIn_view.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Register_View.dart';
 import 'package:fruit_hub/Features/Home/Presentation/Views/Home_View.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
@@ -11,7 +11,7 @@ abstract class AppRouter {
   //
   static const String KSplashView = '/';
   static const String KOnboardingView = '/onboardingview';
-  static const String Kloginview = '/Loginview';
+  static const String KSignInview = '/Loginview';
   static const String KRegisterview = '/Registerview';
   static const String KHomview = '/HomView';
 
@@ -26,8 +26,8 @@ abstract class AppRouter {
       builder: (context, state) => OnboardingView(),
     ),
     GoRoute(
-      path: Kloginview,
-      builder: (context, state) => LoginView(),
+      path: KSignInview,
+      builder: (context, state) => SigninView(),
     ),
     GoRoute(
       path: KRegisterview,
