@@ -35,10 +35,9 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
-        if(state is SignInSuccess){
+        if (state is SignInSuccess) {
           GoRouter.of(context).go(AppRouter.KHomview);
-
-        }else if(state is SignInFailure){
+        } else if (state is SignInFailure) {
           ErrorBar(context, state.message);
         }
       },

@@ -22,13 +22,24 @@ class AuthrepoImpl extends AuthRepo {
       return left(ServerFailure(message: e.message));
     }
   }
-  
+
   @override
-  Future<Either<Failure, UserEntity>> SignInWithEmailandPassword(String email, String password)async {
+  Future<Either<Failure, UserEntity>> SignInWithEmailandPassword(
+      String email, String password) async {
     try {
       var user = await firebaseauthservice.SignInWithEmailAndPassword(
           email: email, password: password);
 
+      return right(UserModel.fromfirebaseuser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> SignInWithGoogle() async {
+    try {
+      var user = await firebaseauthservice.signInWithGoogle();
       return right(UserModel.fromfirebaseuser(user));
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.message));
