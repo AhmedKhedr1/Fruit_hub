@@ -45,4 +45,14 @@ class AuthrepoImpl extends AuthRepo {
       return left(ServerFailure(message: e.message));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    try {
+      var user = await firebaseauthservice.signInWithFacebook();
+      return right(UserModel.fromfirebaseuser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.message));
+    }
+  }
 }
