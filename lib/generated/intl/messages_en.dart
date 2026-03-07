@@ -21,5 +21,30 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "acceptTermsError": MessageLookupByLibrary.simpleMessage(
+      "You must accept the terms and conditions.",
+    ),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "An account already exists for this email.",
+    ),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email address.",
+    ),
+    "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
+      "  Network request failed. Please check your internet connection and try again.",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "Something went wrong, please try again.",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "No user found for that email.",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "The password is too weak.",
+    ),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage(
+      "Wrong password provided for that user.",
+    ),
+  };
 }

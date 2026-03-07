@@ -54,6 +54,86 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `The password is too weak.`
+  String get weakPassword {
+    return Intl.message(
+      'The password is too weak.',
+      name: 'weakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An account already exists for this email.`
+  String get emailAlreadyInUse {
+    return Intl.message(
+      'An account already exists for this email.',
+      name: 'emailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address.`
+  String get invalidEmail {
+    return Intl.message(
+      'Invalid email address.',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong, please try again.`
+  String get unknownError {
+    return Intl.message(
+      'Something went wrong, please try again.',
+      name: 'unknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must accept the terms and conditions.`
+  String get acceptTermsError {
+    return Intl.message(
+      'You must accept the terms and conditions.',
+      name: 'acceptTermsError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No user found for that email.`
+  String get userNotFound {
+    return Intl.message(
+      'No user found for that email.',
+      name: 'userNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password provided for that user.`
+  String get wrongPassword {
+    return Intl.message(
+      'Wrong password provided for that user.',
+      name: 'wrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `  Network request failed. Please check your internet connection and try again.`
+  String get networkrequestfailed {
+    return Intl.message(
+      '  Network request failed. Please check your internet connection and try again.',
+      name: 'networkrequestfailed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

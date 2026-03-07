@@ -1,1 +1,11 @@
-{}
+{
+  "weakPassword": "The password is too weak.",
+  "emailAlreadyInUse": "An account already exists for this email.",
+  "invalidEmail": "Invalid email address.",
+  "unknownError": "Something went wrong, please try again.",
+  "acceptTermsError": "You must accept the terms and conditions.",
+  "userNotFound":"No user found for that email.",
+  "wrongPassword":"Wrong password provided for that user.",
+  "networkrequestfailed":"  Network request failed. Please check your internet connection and try again."
+
+}
