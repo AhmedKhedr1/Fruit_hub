@@ -110,12 +110,15 @@ class _SigninViewBodyState extends State<SigninViewBody> {
               SizedBox(
                 height: 18,
               ),
+              // SocialLoginButton(
+              //     imagePath: Assets.appleicon, hintText: 'تسجيل بواسطة أبل'),
+              // SizedBox(
+              //   height: 18,
+              // ),
               SocialLoginButton(
-                  imagePath: Assets.appleicon, hintText: 'تسجيل بواسطة أبل'),
-              SizedBox(
-                height: 18,
-              ),
-              SocialLoginButton(
+                  onTap: () {
+                    //   context.read<SigninCubit>().signInWithFacebook();
+                  },
                   imagePath: Assets.Facebookicon,
                   hintText: 'تسجيل بواسطة فيسبوك')
             ],

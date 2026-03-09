@@ -2,7 +2,7 @@
 
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signin_view.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signup_view.dart';
-import 'package:fruit_hub/Features/Home/home_view.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Onboarding_View.dart';
 import 'package:go_router/go_router.dart';

@@ -11,5 +11,9 @@ abstract class Assets {
   static const String Facebookicon = 'assets/images/facebook icon.svg';
   static const String googleicon = 'assets/images/google icon.svg';
   static const String appleicon = 'assets/images/Apple icon.svg';
-  static const String checkicon='assets/images/check.svg';
+  static const String checkicon = 'assets/images/check.svg';
+  static const String userimage = 'assets/images/user_image.png';
+  static const String notificationicon = 'assets/images/notification_icon.png';
+  static const String searchicon = 'assets/images/search-normal.png';
+  static const String filtericon = 'assets/images/setting-4.png';
 }

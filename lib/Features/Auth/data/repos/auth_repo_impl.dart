@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/errors/exceptions.dart';
 import 'package:fruit_hub/Core/errors/failures.dart';
 import 'package:fruit_hub/Core/services/firebase_auth_service.dart';
@@ -49,4 +50,24 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(UserModel.fromFirebaseUser(user));
+    } catch (e) {
+      debugPrint(e.toString());
+      return left(ServerFailure(e.toString()));
+    }
+  }
+  // Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+  //   try {
+  //     var user = await firebaseAuthService.signInWithFacebook();
+  //     return right(UserModel.fromFirebaseUser(user));
+  //   }
+  //    catch (e) {
+  //     return left(ServerFailure(e.toString()));
+  //   }
+  // }
 }
