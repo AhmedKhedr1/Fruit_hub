@@ -16,4 +16,9 @@ abstract class Assets {
   static const String notificationicon = 'assets/images/notification_icon.png';
   static const String searchicon = 'assets/images/search-normal.png';
   static const String filtericon = 'assets/images/setting-4.png';
+  static const String testimage = 'assets/images/watermelon.png';
+  static const String featureditemBackground =
+      'assets/images/featured_item_background.png';
+  static const String hearticon = 'assets/images/heart.png';
+  static const String plusicon = 'assets/images/plus.png';
 }
