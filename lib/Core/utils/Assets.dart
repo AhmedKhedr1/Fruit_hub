@@ -21,4 +21,15 @@ abstract class Assets {
       'assets/images/featured_item_background.png';
   static const String hearticon = 'assets/images/heart.png';
   static const String plusicon = 'assets/images/plus.png';
+  static const String activehomeicon = 'assets/images/active_home.svg';
+  static const String inactivehomeicon = 'assets/images/inactive_home.svg';
+  static const String activeproducticon = 'assets/images/active_product.svg';
+  static const String inactiveproducticon =
+      'assets/images/inactive_product.svg';
+  static const String activeshoppingcart =
+      'assets/images/active_shopping-cart.svg';
+  static const String inactiveshoppingcart =
+      'assets/images/inactive_shopping-cart.svg';
+  static const String activeuser = 'assets/images/active_user.svg';
+  static const String inactiveuser = 'assets/images/inactive_user.svg';
 }

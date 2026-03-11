@@ -25,15 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptTermsError": MessageLookupByLibrary.simpleMessage(
       "You must accept the terms and conditions.",
     ),
+    "account": MessageLookupByLibrary.simpleMessage("My Account"),
+    "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists for this email.",
     ),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "Invalid email address.",
     ),
     "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
       "  Network request failed. Please check your internet connection and try again.",
     ),
+    "products": MessageLookupByLibrary.simpleMessage("Products"),
     "unknownError": MessageLookupByLibrary.simpleMessage(
       "Something went wrong, please try again.",
     ),

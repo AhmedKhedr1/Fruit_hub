@@ -25,15 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptTermsError": MessageLookupByLibrary.simpleMessage(
       "يجب عليك الموافقة على الشروط والأحكام.",
     ),
+    "account": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "يوجد حساب مسجل بهذا البريد الإلكتروني.",
     ),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني غير صالح.",
     ),
     "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
       "  فشل طلب الشبكة. يرجى التحقق من اتصال الإنترنت الخاص بك والمحاولة مرة أخرى.",
     ),
+    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "unknownError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ، يرجى المحاولة مرة أخرى.",
     ),

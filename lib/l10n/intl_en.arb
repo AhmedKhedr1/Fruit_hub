@@ -6,6 +6,9 @@
   "acceptTermsError": "You must accept the terms and conditions.",
   "userNotFound":"No user found for that email.",
   "wrongPassword":"Wrong password provided for that user.",
-  "networkrequestfailed":"  Network request failed. Please check your internet connection and try again."
-
+  "networkrequestfailed":"  Network request failed. Please check your internet connection and try again.",
+  "home": "Home",
+  "products": "Products",
+  "cart": "Cart",
+  "account": "My Account"
 }
