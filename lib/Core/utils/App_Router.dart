@@ -4,6 +4,7 @@ import 'package:fruit_hub/Features/Auth/Presentation/Views/signin_view.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signup_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
+import 'package:fruit_hub/Features/best_selling_fruit/presentation/views/best_selling_view.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Onboarding_View.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,8 +14,8 @@ abstract class AppRouter {
   static const String KOnboardingView = '/onboardingview';
   static const String Kloginview = '/Loginview';
   static const String KRegisterview = '/Registerview';
-
   static const String KHomeview = '/Homeview';
+  static const String KBestsellingview = '/Bestsellingview';
 
 //
   static final router = GoRouter(routes: [
@@ -37,6 +38,10 @@ abstract class AppRouter {
     GoRoute(
       path: KHomeview,
       builder: (context, state) => HomeView(),
+    ),
+    GoRoute(
+      path: KBestsellingview,
+      builder: (context, state) => BestSellingView(),
     )
   ]);
 }
