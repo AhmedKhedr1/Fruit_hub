@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/Core/helper/build_error_bar.dart';
+import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/signup_view_body.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/cubits/Signup_cubit/signup_cubit.dart';

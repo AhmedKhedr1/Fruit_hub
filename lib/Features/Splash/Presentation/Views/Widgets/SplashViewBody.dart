@@ -1,6 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruit_hub/Constant.dart';
+import 'package:fruit_hub/Core/services/firebase_auth_service.dart';
 import 'package:fruit_hub/Core/services/shared_preferences_singelton.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
@@ -16,25 +19,27 @@ class Splashviewbody extends StatefulWidget {
 class _SplashviewbodyState extends State<Splashviewbody> {
   @override
   void initState() {
-    navigateToOnboarding();
-    // TODO: implement initState
+    excuteNavigation();
     super.initState();
   }
 
-  void navigateToOnboarding() {
+  void excuteNavigation() {
     bool isOnboardinViewSeen = Prefs.getBool(KisOnBoardingViewSeen);
     Future.delayed(
       Duration(seconds: 2),
       () {
-        if (isOnboardinViewSeen==true) {
-  GoRouter.of(context).go(AppRouter.Kloginview);
-}else{
-   GoRouter.of(context).go(AppRouter.KOnboardingView);
-}
+        if (isOnboardinViewSeen == true) {
+          var isLoggedin = FirebaseAuthService().isLoggedin();
+          if (isLoggedin) {
+            GoRouter.of(context).go(AppRouter.KHomeview);
+          } else {
+            GoRouter.of(context).go(AppRouter.Kloginview);
+          }
+        } else {
+          GoRouter.of(context).go(AppRouter.KOnboardingView);
+        }
       },
     );
-
-    // This will navigate to the OnboardingView after a delay of 300 milliseconds.
   }
 
   @override

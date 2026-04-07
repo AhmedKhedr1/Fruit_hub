@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/Core/helper/build_error_bar.dart';
+import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/Widgets/signin_view_body.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/cubits/Signin_cubit/signin_cubit.dart';

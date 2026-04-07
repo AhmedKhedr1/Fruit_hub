@@ -1,4 +1,6 @@
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/widgets/CustomTextFormField.dart';
 

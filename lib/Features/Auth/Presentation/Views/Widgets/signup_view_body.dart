@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/Core/helper/build_error_bar.dart';
+import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Core/widgets/CustomTextFormField.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
 import 'package:fruit_hub/Core/widgets/password_field.dart';
