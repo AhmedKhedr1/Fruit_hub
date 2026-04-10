@@ -31,7 +31,7 @@ class _SplashviewbodyState extends State<Splashviewbody> {
         if (isOnboardinViewSeen == true) {
           var isLoggedin = FirebaseAuthService().isLoggedin();
           if (isLoggedin) {
-            GoRouter.of(context).go(AppRouter.KHomeview);
+            GoRouter.of(context).go(AppRouter.KMainview);
           } else {
             GoRouter.of(context).go(AppRouter.Kloginview);
           }

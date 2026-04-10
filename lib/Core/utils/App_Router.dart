@@ -4,9 +4,11 @@ import 'package:fruit_hub/Features/Auth/Presentation/Views/signin_view.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signup_view.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/checkout_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/main_view.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
 import 'package:fruit_hub/Features/best_selling_fruit/presentation/views/best_selling_view.dart';
+import 'package:fruit_hub/Features/cart/presentation/views/cart_view.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Onboarding_View.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,10 +19,12 @@ abstract class AppRouter {
   static const String Kloginview = '/Loginview';
   static const String KRegisterview = '/Registerview';
   static const String KHomeview = '/Homeview';
+  static const String KMainview = '/Mainview';
   static const String KBestsellingview = '/Bestsellingview';
   static const String KProductview = '/Productview';
   static const String KCheckoutview = '/Checkoutview';
   static const String KProfileview = '/Profileview';
+  static const String KCartview = '/Cartview';
 
 //
   static final router = GoRouter(routes: [
@@ -45,6 +49,10 @@ abstract class AppRouter {
       builder: (context, state) => HomeView(),
     ),
     GoRoute(
+      path: KMainview,
+      builder: (context, state) => MainView(),
+    ),
+    GoRoute(
       path: KBestsellingview,
       builder: (context, state) => BestSellingView(),
     ),
@@ -55,6 +63,10 @@ abstract class AppRouter {
     GoRoute(
       path: KProfileview,
       builder: (context, state) => ProfileView(),
+    ),
+    GoRoute(
+      path: KCartview,
+      builder: (context, state) => CartView(),
     )
   ]);
 }
