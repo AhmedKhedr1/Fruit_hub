@@ -7,7 +7,7 @@ import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/main_view.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
-import 'package:fruit_hub/Features/best_selling_fruit/presentation/views/best_selling_view.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/best_selling_view.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/cart_view.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Onboarding_View.dart';
 import 'package:go_router/go_router.dart';

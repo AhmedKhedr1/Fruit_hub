@@ -4,11 +4,10 @@ import 'package:fruit_hub/Core/cubits/products_cubit/products_cubit.dart';
 import 'package:fruit_hub/Core/repos/product_repo.dart';
 import 'package:fruit_hub/Core/services/get_it_services.dart';
 import 'package:fruit_hub/Core/widgets/build_app_bar.dart';
-import 'package:fruit_hub/Features/Home/presentation/views/widgets/product_view_body.dart';
-import 'package:fruit_hub/generated/l10n.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/widgets/best_selling_view_body.dart';
 
-class ProductView extends StatelessWidget {
-  const ProductView({super.key});
+class BestSellingView extends StatelessWidget {
+  const BestSellingView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +15,12 @@ class ProductView extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: buildAppBar(
         context,
-        title: S.current.products,
-        leading: false,
+        title: 'الأكثر مبيعًا',
+        leading: true,
       ),
       body: BlocProvider(
         create: (context) => ProductsCubit(getIt<ProductRepo>()),
-        child: ProductViewBody(),
+        child: BestSellingViewBody(),
       ),
     );
   }

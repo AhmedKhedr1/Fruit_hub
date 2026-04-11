@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/Features/Checkout/presentation/views/checkout_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/product_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/custom_bottom_naviagtion_bar.dart';

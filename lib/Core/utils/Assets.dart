@@ -16,7 +16,6 @@ abstract class Assets {
   static const String notificationicon = 'assets/images/notification_icon.png';
   static const String searchicon = 'assets/images/search-normal.png';
   static const String filtericon = 'assets/images/setting-4.png';
-  static const String testimage = 'assets/images/watermelon.png';
   static const String featureditemBackground =
       'assets/images/featured_item_background.png';
   static const String hearticon = 'assets/images/heart.png';
@@ -32,4 +31,11 @@ abstract class Assets {
       'assets/images/inactive_shopping-cart.svg';
   static const String activeuser = 'assets/images/active_user.svg';
   static const String inactiveuser = 'assets/images/inactive_user.svg';
+  static const String arrowswaphorizontal =
+      'assets/images/arrow-swap-horizontal.png';
+  static const String avocado = 'assets/images/Avocado.png';
+  static const String banana = 'assets/images/banana.png';
+  static const String pineappleimage = 'assets/images/pineapple.png';
+  static const String strawberry = 'assets/images/Strawberry.png';
+  static const String watermelon = 'assets/images/watermelon.png';
 }

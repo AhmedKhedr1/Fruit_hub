@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/fruit_item.dart';
 
-class FruitItemGridview extends StatelessWidget {
-  const FruitItemGridview({super.key});
-
+class ProductGridview extends StatelessWidget {
+  const ProductGridview({super.key, required this.products});
+  final List<ProductEntitey> products;
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
@@ -12,9 +13,11 @@ class FruitItemGridview extends StatelessWidget {
           childAspectRatio: 163 / 204,
           mainAxisSpacing: 8,
           crossAxisSpacing: 16),
-      itemCount: 10,
+      itemCount: products.length,
       itemBuilder: (context, index) {
-        return FruitItem();
+        return FruitItem(
+          productEntitey: products[index],
+        );
       },
     );
   }

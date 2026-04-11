@@ -22,7 +22,7 @@ class FeaturedItem extends StatelessWidget {
                   top: 0,
                   right: MediaQuery.sizeOf(context).width * .4,
                   child: Image.asset(
-                    Assets.testimage,
+                    Assets.watermelon,
                     fit: BoxFit.fill,
                   )),
               Container(

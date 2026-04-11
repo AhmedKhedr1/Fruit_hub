@@ -28,16 +28,12 @@ class ProductRepoImpl extends ProductRepo {
   Future<Either<Failure, List<ProductEntitey>>>
       getBestSelleingProducts() async {
     try {
-      var data = await dataBaseService.getData(
-          path: BackendEndpoint.getProducts,
-          query: {
-            'limit': 10,
-            'orderBy': 'selleingCount',
-            'descending': true,
-          }
-          
-          
-          ) as List<Map<String, dynamic>>;
+      var data = await dataBaseService
+          .getData(path: BackendEndpoint.getProducts, query: {
+        'limit': 10,
+        'orderBy': 'sellingCount',
+        'descending': true,
+      }) as List<Map<String, dynamic>>;
       List<ProductEntitey> products =
           data.map((e) => ProductModel.fromjson(e).toEntity()).toList();
       return right(products);
