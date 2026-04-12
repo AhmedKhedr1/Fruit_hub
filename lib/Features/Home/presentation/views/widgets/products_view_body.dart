@@ -5,16 +5,15 @@ import 'package:fruit_hub/Core/widgets/search_text_field.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/categories_section.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/product_grid_view_bloc_builder.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/best_seller_header.dart';
-import 'package:fruit_hub/Features/Home/presentation/views/widgets/products_header.dart';
 
-class ProductViewBody extends StatefulWidget {
-  const ProductViewBody({super.key});
+class ProductsViewBody extends StatefulWidget {
+  const ProductsViewBody({super.key});
 
   @override
-  State<ProductViewBody> createState() => _ProductViewBodyState();
+  State<ProductsViewBody> createState() => _ProductsViewBodyState();
 }
 
-class _ProductViewBodyState extends State<ProductViewBody> {
+class _ProductsViewBodyState extends State<ProductsViewBody> {
   @override
   void initState() {
     context.read<ProductsCubit>().getBestSelleingProducts();

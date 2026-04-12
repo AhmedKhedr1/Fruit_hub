@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Core/models/review_model.dart';
 
@@ -9,24 +8,26 @@ class ProductModel {
   final int expirationMonths;
   bool isOrganic = false;
   final int numOfCalories, unitAmount;
-  final num avgRating = 0;
+  final num avgRating;
   final num ratingCount = 0;
   final List<ReviewModel> reviews;
   final int selleingCount;
 
-  ProductModel(
-      {required this.name,
-      required this.code,
-      required this.description,
-      required this.imageUrl,
-      required this.price,
-      required this.isFeatured,
-      required this.isOrganic,
-      required this.expirationMonths,
-      required this.numOfCalories,
-      required this.unitAmount,
-      required this.reviews,
-      required this.selleingCount});
+  ProductModel({
+    required this.name,
+    required this.code,
+    required this.description,
+    required this.imageUrl,
+    required this.price,
+    required this.isFeatured,
+    required this.isOrganic,
+    required this.expirationMonths,
+    required this.numOfCalories,
+    required this.unitAmount,
+    required this.reviews,
+    required this.selleingCount,
+    required this.avgRating,
+  });
 
   factory ProductModel.fromjson(Map<String, dynamic> json) {
     return ProductModel(
@@ -44,6 +45,7 @@ class ProductModel {
           .map((e) => ReviewModel.fromJson(e))
           .toList(),
       selleingCount: json['sellingCount'],
+      avgRating: json['avgRating'],
     );
   }
 
@@ -77,6 +79,7 @@ class ProductModel {
         expirationMonths: expirationMonths,
         numOfCalories: numOfCalories,
         unitAmount: unitAmount,
-        revews: reviews.map((e) => e.toEntity()).toList());
+        revews: reviews.map((e) => e.toEntity()).toList(),
+        avgRating: avgRating);
   }
 }

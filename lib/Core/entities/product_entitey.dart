@@ -8,7 +8,7 @@ class ProductEntitey {
   final int expirationMonths;
   bool isOrganic = false;
   final int numOfCalories, unitAmount;
-  final num avgRating = 0;
+  final num avgRating ;
   final num ratingCount = 0;
   final List<ReviewEntity> revews;
 
@@ -24,5 +24,7 @@ class ProductEntitey {
     required this.expirationMonths,
     required this.numOfCalories,
     required this.unitAmount,
+    required this.avgRating,
+    
   });
 }

@@ -1,10 +1,8 @@
-import 'dart:io';
-
 import 'package:fruit_hub/Core/entities/product_entitey.dart';
 
 ProductEntitey getdummyproduct() {
   return ProductEntitey(
-    imageUrl: null,
+      imageUrl: null,
       name: 'Apple',
       code: '123',
       description: 'fresh apple',
@@ -14,7 +12,8 @@ ProductEntitey getdummyproduct() {
       revews: [],
       expirationMonths: 5,
       numOfCalories: 52,
-      unitAmount: 2);
+      unitAmount: 2,
+      avgRating: 4.5);
 }
 
 List<ProductEntitey> getdummyproducts() {

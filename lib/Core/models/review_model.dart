@@ -41,6 +41,7 @@ class ReviewModel {
       "rating": rating,
     };
   }
+
   ReviewEntity toEntity() {
     return ReviewEntity(
       name: name,

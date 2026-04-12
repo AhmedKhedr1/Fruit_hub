@@ -1,10 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signin_view.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signup_view.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/checkout_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/main_view.dart';
+import 'package:fruit_hub/Features/ProductDetails/presentation/views/product_details_view.dart';
+import 'package:fruit_hub/Features/ProductDetails/presentation/views/reviews_view.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/best_selling_view.dart';
@@ -21,10 +24,12 @@ abstract class AppRouter {
   static const String KHomeview = '/Homeview';
   static const String KMainview = '/Mainview';
   static const String KBestsellingview = '/Bestsellingview';
-  static const String KProductview = '/Productview';
+  static const String KProductsview = '/Productsview';
   static const String KCheckoutview = '/Checkoutview';
   static const String KProfileview = '/Profileview';
   static const String KCartview = '/Cartview';
+  static const String KProductDetailsview = '/ProductDetailsview';
+  static const String reviewsview = '/ReviewsView';
 
 //
   static final router = GoRouter(routes: [
@@ -67,6 +72,17 @@ abstract class AppRouter {
     GoRoute(
       path: KCartview,
       builder: (context, state) => CartView(),
-    )
+    ),
+    GoRoute(
+      path: KProductDetailsview,
+      builder: (context, state) {
+        final product = state.extra as ProductEntitey;
+        return ProductDetailsView(product: product);
+      },
+    ),
+    GoRoute(
+      path: reviewsview,
+      builder: (context, state) => ReviewsView(),
+    ),
   ]);
 }

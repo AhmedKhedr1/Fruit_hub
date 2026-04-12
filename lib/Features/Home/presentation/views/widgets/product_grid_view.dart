@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/entities/product_entitey.dart';
+import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/fruit_item.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductGridview extends StatelessWidget {
   const ProductGridview({super.key, required this.products});
@@ -15,8 +17,14 @@ class ProductGridview extends StatelessWidget {
           crossAxisSpacing: 16),
       itemCount: products.length,
       itemBuilder: (context, index) {
-        return FruitItem(
-          productEntitey: products[index],
+        return GestureDetector(
+          onTap: () {
+            GoRouter.of(context)
+                .push(AppRouter.KProductDetailsview, extra: products[index]);
+          },
+          child: FruitItem(
+            productEntitey: products[index],
+          ),
         );
       },
     );

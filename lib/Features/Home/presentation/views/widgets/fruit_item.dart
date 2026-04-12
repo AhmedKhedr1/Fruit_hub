@@ -3,6 +3,7 @@ import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
+import 'package:fruit_hub/Core/widgets/quantity_button.dart';
 
 class FruitItem extends StatelessWidget {
   const FruitItem({super.key, required this.productEntitey});
@@ -53,7 +54,7 @@ class FruitItem extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                          text:" ${productEntitey.price.toString() } جنيه ",
+                          text: " ${productEntitey.price.toString()} جنيه ",
                           style: TextStyless.semiBold13
                               .copyWith(color: Color(0xffF4A91F))),
                       TextSpan(
@@ -61,22 +62,16 @@ class FruitItem extends StatelessWidget {
                           style: TextStyless.semiBold13
                               .copyWith(color: Color(0xffF4A91F))),
                       TextSpan(
-                          text: ' ${productEntitey.unitAmount.toString()} كيلو ',
+                          text:
+                              ' ${productEntitey.unitAmount.toString()} كيلو ',
                           style: TextStyless.semiBold13
                               .copyWith(color: Color(0xffF8C76D)))
                     ],
                   ),
                 ),
-                trailing: GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                        color: AppColors.primaryColor,
-                        borderRadius: BorderRadius.circular(22)),
-                    child: Image.asset(Assets.plusicon),
-                  ),
+                trailing: QuantityButton(
+                  color: AppColors.primaryColor,
+                  icon: Assets.plusicon, onTap: () {  },
                 ),
               ),
             ],

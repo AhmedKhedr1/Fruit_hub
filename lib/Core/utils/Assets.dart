@@ -38,4 +38,9 @@ abstract class Assets {
   static const String pineappleimage = 'assets/images/pineapple.png';
   static const String strawberry = 'assets/images/Strawberry.png';
   static const String watermelon = 'assets/images/watermelon.png';
+  static const String minusicon = 'assets/images/minus.png';
+  static const String staricon = 'assets/images/star.png';
+  static const String calories = 'assets/images/calories.png';
+  static const String expirationdate = 'assets/images/expirationdate.png';
+  static const String organic = 'assets/images/Organic.png';
 }

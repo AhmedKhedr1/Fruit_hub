@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
-import 'package:fruit_hub/Features/Home/presentation/views/product_view.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/products_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/custom_bottom_naviagtion_bar.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/cart_view.dart';
@@ -17,7 +17,7 @@ class _MainViewState extends State<MainView> {
 
   final List<Widget> _pages = const [
     HomeView(),
-    ProductView(),
+    ProductsView(),
     CartView(),
     ProfileView(),
   ];
