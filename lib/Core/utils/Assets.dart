@@ -43,4 +43,5 @@ abstract class Assets {
   static const String calories = 'assets/images/calories.png';
   static const String expirationdate = 'assets/images/expirationdate.png';
   static const String organic = 'assets/images/Organic.png';
+  static const String trash = 'assets/images/trash.png';
 }

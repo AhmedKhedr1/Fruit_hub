@@ -18,6 +18,7 @@ class ProductsView extends StatelessWidget {
         context,
         title: S.current.products,
         leading: false,
+        notification: true,
       ),
       body: BlocProvider(
         create: (context) => ProductsCubit(getIt<ProductRepo>()),
