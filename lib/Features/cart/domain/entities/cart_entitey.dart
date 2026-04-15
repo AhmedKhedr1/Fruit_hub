@@ -1,3 +1,5 @@
+// ignore_for_file: strict_top_level_inference
+
 import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Features/cart/domain/entities/cart_item_entitey.dart';
 
@@ -13,7 +15,6 @@ class CartEntitey {
   removeCartItem(CartItemEntitey cartItemEntitey) {
     cartItems.remove(cartItemEntitey);
   }
-  
 
   double calculateTotalPrice() {
     double totalprice = 0;

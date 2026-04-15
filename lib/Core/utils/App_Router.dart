@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signin_view.dart';
 import 'package:fruit_hub/Features/Auth/Presentation/Views/signup_view.dart';
@@ -11,6 +12,7 @@ import 'package:fruit_hub/Features/ProductDetails/presentation/views/reviews_vie
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/best_selling_view.dart';
+import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/cart_view.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Onboarding_View.dart';
 import 'package:go_router/go_router.dart';
@@ -59,7 +61,15 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: KBestsellingview,
-      builder: (context, state) => BestSellingView(),
+      builder: (context, state) {
+        final data = state.extra as Map;
+        final cubit = data['cubit'] as CartCubit;
+
+        return BlocProvider.value(
+          value: cubit,
+          child: BestSellingView(),
+        );
+      },
     ),
     GoRoute(
       path: KCheckoutview,
@@ -76,8 +86,14 @@ abstract class AppRouter {
     GoRoute(
       path: KProductDetailsview,
       builder: (context, state) {
-        final product = state.extra as ProductEntitey;
-        return ProductDetailsView(product: product);
+        final data = state.extra as Map;
+        final product = data['product'] as ProductEntitey;
+        final cubit = data['cubit'] as CartCubit;
+
+        return BlocProvider.value(
+          value: cubit,
+          child: ProductDetailsView(product: product),
+        );
       },
     ),
     GoRoute(

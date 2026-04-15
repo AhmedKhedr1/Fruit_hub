@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/entities/product_entitey.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/fruit_item.dart';
+import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductGridview extends StatelessWidget {
@@ -19,9 +21,14 @@ class ProductGridview extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            GoRouter.of(context)
-                .push(AppRouter.KProductDetailsview, extra: products[index]);
-          },
+  GoRouter.of(context).push(
+    AppRouter.KProductDetailsview,
+    extra: {
+      'product': products[index],
+      'cubit': context.read<CartCubit>(),
+    },
+  );
+},
           child: FruitItem(
             productEntitey: products[index],
           ),
