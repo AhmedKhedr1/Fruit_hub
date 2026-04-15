@@ -1,25 +1,15 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 import 'package:fruit_hub/Core/widgets/quantity_button.dart';
+import 'package:fruit_hub/Features/cart/domain/entities/cart_item_entitey.dart';
+import 'package:fruit_hub/Features/cart/presentation/cubits/cart_items_cubit/cart_items_cubit.dart';
 
-class QuantityCounter extends StatefulWidget {
-  const QuantityCounter({super.key});
-
-  @override
-  State<QuantityCounter> createState() => _QuantityCounterState();
-}
-
-class _QuantityCounterState extends State<QuantityCounter> {
-  late int quantity;
-
-  @override
-  void initState() {
-    quantity = 0;
-    super.initState();
-  }
+class QuantityCounter extends StatelessWidget {
+  const QuantityCounter({super.key, required this.cartItemEntitey});
+  final CartItemEntitey cartItemEntitey;
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +20,13 @@ class _QuantityCounterState extends State<QuantityCounter> {
           color: AppColors.primaryColor,
           icon: Assets.plusicon,
           onTap: () {
-            setState(() {
-              quantity++;
-            });
+            cartItemEntitey.increasCount();
+            context.read<CartItemsCubit>().cartItemUpdated(cartItemEntitey);
           },
         ),
         SizedBox(width: 10),
         Text(
-          quantity.toString(),
+          cartItemEntitey.count.toString(),
           style: TextStyless.bold16.copyWith(
             color: Color(0xff06140C),
           ),
@@ -49,11 +38,8 @@ class _QuantityCounterState extends State<QuantityCounter> {
           color: Color(0xffF1F1F5),
           icon: Assets.minusicon,
           onTap: () {
-            setState(
-              () {
-                if (quantity > 0) quantity--;
-              },
-            );
+            cartItemEntitey.decreasCount();
+            context.read<CartItemsCubit>().cartItemUpdated(cartItemEntitey);
           },
         ),
       ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
-import 'package:fruit_hub/Core/widgets/quantity_counter.dart';
 
 class ProductInfoSection extends StatefulWidget {
   const ProductInfoSection(
@@ -38,6 +37,9 @@ class _ProductInfoSectionState extends State<ProductInfoSection> {
             ],
           ),
         ),
-        trailing: QuantityCounter());
+        trailing: SizedBox()
+        // QuantityCounter()
+
+        );
   }
 }

@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/products_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/custom_bottom_naviagtion_bar.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/widgets/main_view_body_bloc_consumer.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
-import 'package:fruit_hub/Features/cart/presentation/cart_cubit/cart_cubit.dart';
+import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/cart_view.dart';
 
 class MainView extends StatefulWidget {
@@ -30,10 +31,8 @@ class _MainViewState extends State<MainView> {
       create: (context) => CartCubit(),
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: IndexedStack(
-          index: _selectedIndex,
-          children: _pages,
-        ),
+        body: MainViewBodyBlocConsumer(
+            selectedIndex: _selectedIndex, pages: _pages),
         bottomNavigationBar: CustomBottomNaviagtionBar(
           selectedIndex: _selectedIndex,
           onItemSelected: (index) {

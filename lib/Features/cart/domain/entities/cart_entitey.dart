@@ -10,6 +10,19 @@ class CartEntitey {
     cartItems.add(cartItemEntitey);
   }
 
+  removeCartItem(CartItemEntitey cartItemEntitey) {
+    cartItems.remove(cartItemEntitey);
+  }
+  
+
+  double calculateTotalPrice() {
+    double totalprice = 0;
+    for (var cartItem in cartItems) {
+      totalprice += cartItem.calculateTotalPrice();
+    }
+    return totalprice;
+  }
+
   bool isExist(ProductEntitey product) {
     for (var cartitem in cartItems) {
       if (cartitem.productEntity == product) {

@@ -5,7 +5,7 @@ import 'package:fruit_hub/Core/utils/App_colors.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 import 'package:fruit_hub/Core/widgets/quantity_button.dart';
-import 'package:fruit_hub/Features/cart/presentation/cart_cubit/cart_cubit.dart';
+import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 
 class FruitItem extends StatelessWidget {
   const FruitItem({super.key, required this.productEntitey});
