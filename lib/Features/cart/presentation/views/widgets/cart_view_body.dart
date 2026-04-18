@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
 import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/cubits/cart_items_cubit/cart_items_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/widgets/cart_header.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/widgets/cart_item_list.dart';
+import 'package:go_router/go_router.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -34,7 +36,9 @@ class CartViewBody extends StatelessWidget {
             child: CustomButton(
                 title:
                     'الدفع ${context.watch<CartCubit>().cartEntitey.calculateTotalPrice()} جنيه',
-                onpressed: () {}),
+                onpressed: () {
+                  GoRouter.of(context).push(AppRouter.KCheckoutview);
+                }),
           );
         },
       ),
