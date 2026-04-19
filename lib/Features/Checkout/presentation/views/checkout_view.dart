@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/widgets/build_app_bar.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/checkout_view_body.dart';
+import 'package:fruit_hub/Features/cart/domain/entities/cart_item_entitey.dart';
 
 class CheckoutView extends StatelessWidget {
-  const CheckoutView({super.key});
-
+  const CheckoutView({super.key, required this.cartitems});
+  final List<CartItemEntitey> cartitems;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

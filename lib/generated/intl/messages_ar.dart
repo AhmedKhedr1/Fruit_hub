@@ -26,9 +26,30 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب عليك الموافقة على الشروط والأحكام.",
     ),
     "account": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "addressRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل العنوان",
+    ),
     "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+    "cityRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل المدينة",
+    ),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "يوجد حساب مسجل بهذا البريد الإلكتروني.",
+    ),
+    "emailInvalid": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل بريد إلكتروني صحيح",
+    ),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل البريد الإلكتروني",
+    ),
+    "empty_cart": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد منتجات في السلة",
+    ),
+    "floorRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل رقم الطابق والشقة",
+    ),
+    "fullNameRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل اسمك بالكامل",
     ),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
@@ -36,6 +57,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
       "  فشل طلب الشبكة. يرجى التحقق من اتصال الإنترنت الخاص بك والمحاولة مرة أخرى.",
+    ),
+    "phoneInvalid": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل رقم هاتف صحيح",
+    ),
+    "phoneRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل رقم الهاتف",
     ),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "unknownError": MessageLookupByLibrary.simpleMessage(

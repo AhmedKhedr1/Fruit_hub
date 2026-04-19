@@ -13,7 +13,7 @@ class ActiveStepItem extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: AppColors.primaryColor,
-          radius: 12,
+          radius: 14,
           child: SvgPicture.asset(Assets.checkicon),
         ),
         SizedBox(
@@ -21,7 +21,7 @@ class ActiveStepItem extends StatelessWidget {
         ),
         Text(
           title,
-          style: TextStyless.bold13.copyWith(color: AppColors.primaryColor),
+          style: TextStyless.bold16.copyWith(color: AppColors.primaryColor),
         )
       ],
     );

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
+import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/cubits/cart_items_cubit/cart_items_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/widgets/cart_header.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/widgets/cart_item_list.dart';
+import 'package:fruit_hub/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -32,12 +34,23 @@ class CartViewBody extends StatelessWidget {
       bottomNavigationBar: BlocBuilder<CartItemsCubit, CartItemsState>(
         builder: (context, state) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 34),
             child: CustomButton(
                 title:
                     'الدفع ${context.watch<CartCubit>().cartEntitey.calculateTotalPrice()} جنيه',
                 onpressed: () {
-                  GoRouter.of(context).push(AppRouter.KCheckoutview);
+                  if (context
+                      .read<CartCubit>()
+                      .cartEntitey
+                      .cartItems
+                      .isNotEmpty) {
+                    GoRouter.of(context).push(
+                      AppRouter.KCheckoutview,
+                      extra: context.read<CartCubit>().cartEntitey.cartItems,
+                    );
+                  } else {
+                    ShowErrorBar(context, S.current.empty_cart, Colors.black);
+                  }
                 }),
           );
         },

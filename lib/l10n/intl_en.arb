@@ -10,5 +10,14 @@
   "home": "Home",
   "products": "Products",
   "cart": "Cart",
-  "account": "My Account"
+  "account": "My Account",
+  "fullNameRequired": "Please enter your full name",
+  "emailRequired": "Please enter your email",
+  "emailInvalid": "Please enter a valid email address",
+  "addressRequired": "Please enter your address",
+  "cityRequired": "Please enter your city",
+  "floorRequired": "Please enter floor and apartment details",
+  "phoneRequired": "Please enter your phone number",
+  "phoneInvalid": "Please enter a valid phone number",
+  "empty_cart": "No products in the cart"
 }

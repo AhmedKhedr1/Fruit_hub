@@ -15,6 +15,13 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   @override
   void initState() {
     pageController = PageController();
+    pageController.addListener(
+      () {
+        setState(() {
+          currentPageIndex = pageController.page!.toInt();
+        });
+      },
+    );
     super.initState();
   }
 
@@ -24,6 +31,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
     super.dispose();
   }
 
+  int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,18 +41,21 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
           SizedBox(
             height: 20,
           ),
-          CheckoutSteps(),
+          CheckoutSteps(
+            currentPageIndex: currentPageIndex,
+            pageController: pageController,
+          ),
           SizedBox(
             height: 32,
           ),
           Expanded(
               child: CheckoutStepsPageView(pageController: pageController)),
           CustomButton(
-              title: 'التالي',
+              title: getnextbuttonTitle(currentPageIndex),
               onpressed: () {
-                pageController.nextPage(
+                pageController.animateToPage(currentPageIndex + 1,
                     duration: Duration(milliseconds: 100),
-                    curve: Curves.easeIn);
+                    curve: Curves.bounceIn);
               }),
           SizedBox(
             height: 40,
@@ -52,5 +63,18 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         ],
       ),
     );
+  }
+
+  String getnextbuttonTitle(int currentPageIndex) {
+    switch (currentPageIndex) {
+      case 0:
+        return "التالي";
+      case 1:
+        return "التالي";
+      case 2:
+        return " تأكيد الطلب";
+      default:
+        return "التالي";
+    }
   }
 }

@@ -154,6 +154,96 @@ class S {
   String get account {
     return Intl.message('My Account', name: 'account', desc: '', args: []);
   }
+
+  /// `Please enter your full name`
+  String get fullNameRequired {
+    return Intl.message(
+      'Please enter your full name',
+      name: 'fullNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email`
+  String get emailRequired {
+    return Intl.message(
+      'Please enter your email',
+      name: 'emailRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address`
+  String get emailInvalid {
+    return Intl.message(
+      'Please enter a valid email address',
+      name: 'emailInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your address`
+  String get addressRequired {
+    return Intl.message(
+      'Please enter your address',
+      name: 'addressRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your city`
+  String get cityRequired {
+    return Intl.message(
+      'Please enter your city',
+      name: 'cityRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter floor and apartment details`
+  String get floorRequired {
+    return Intl.message(
+      'Please enter floor and apartment details',
+      name: 'floorRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get phoneRequired {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'phoneRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get phoneInvalid {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'phoneInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No products in the cart`
+  String get empty_cart {
+    return Intl.message(
+      'No products in the cart',
+      name: 'empty_cart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -44,4 +44,6 @@ abstract class Assets {
   static const String expirationdate = 'assets/images/expirationdate.png';
   static const String organic = 'assets/images/Organic.png';
   static const String trash = 'assets/images/trash.png';
+  static const String location = 'assets/images/location.png';
+  static const String Edit = 'assets/images/edit.png';
 }

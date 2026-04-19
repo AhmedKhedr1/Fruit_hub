@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/widgets/CustomTextFormField.dart';
+import 'package:fruit_hub/generated/l10n.dart';
 
 class AddressInputSection extends StatelessWidget {
   const AddressInputSection({super.key});
@@ -14,7 +15,7 @@ class AddressInputSection extends StatelessWidget {
         CustomTextFormField(
           hint: 'الاسم كامل',
           keyboardType: TextInputType.text,
-          validatormessage: '',
+          validatormessage: S.current.fullNameRequired,
           onSaved: (string) {},
         ),
         SizedBox(
@@ -23,7 +24,7 @@ class AddressInputSection extends StatelessWidget {
         CustomTextFormField(
           hint: 'البريد الإلكتروني',
           keyboardType: TextInputType.text,
-          validatormessage: '',
+          validatormessage: S.current.emailRequired,
           onSaved: (string) {},
         ),
         SizedBox(
@@ -32,7 +33,7 @@ class AddressInputSection extends StatelessWidget {
         CustomTextFormField(
           hint: 'العنوان',
           keyboardType: TextInputType.text,
-          validatormessage: '',
+          validatormessage: S.current.addressRequired,
           onSaved: (string) {},
         ),
         SizedBox(
@@ -41,7 +42,7 @@ class AddressInputSection extends StatelessWidget {
         CustomTextFormField(
           hint: 'المدينه',
           keyboardType: TextInputType.text,
-          validatormessage: '',
+          validatormessage: S.current.cityRequired,
           onSaved: (string) {},
         ),
         SizedBox(
@@ -50,7 +51,7 @@ class AddressInputSection extends StatelessWidget {
         CustomTextFormField(
           hint: 'رقم الطابق , رقم الشقه ..',
           keyboardType: TextInputType.text,
-          validatormessage: '',
+          validatormessage: S.current.floorRequired,
           onSaved: (string) {},
         ),
         SizedBox(
@@ -59,7 +60,7 @@ class AddressInputSection extends StatelessWidget {
         CustomTextFormField(
           hint: 'رقم الهاتف',
           keyboardType: TextInputType.text,
-          validatormessage: '',
+          validatormessage: S.current.phoneRequired,
           onSaved: (string) {},
         )
       ],

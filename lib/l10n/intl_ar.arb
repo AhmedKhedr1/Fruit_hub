@@ -10,7 +10,16 @@
   "home": "الرئيسية",
   "products": "المنتجات",
   "cart": "سلة التسوق",
-  "account": "حسابي"
+  "account": "حسابي",
+  "fullNameRequired": "من فضلك أدخل اسمك بالكامل",
+  "emailRequired": "من فضلك أدخل البريد الإلكتروني",
+  "emailInvalid": "من فضلك أدخل بريد إلكتروني صحيح",
+  "addressRequired": "من فضلك أدخل العنوان",
+  "cityRequired": "من فضلك أدخل المدينة",
+  "floorRequired": "من فضلك أدخل رقم الطابق والشقة",
+  "phoneRequired": "من فضلك أدخل رقم الهاتف",
+  "phoneInvalid": "من فضلك أدخل رقم هاتف صحيح",
+  "empty_cart": "لا يوجد منتجات في السلة"
 
   
   

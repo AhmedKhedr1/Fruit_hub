@@ -26,9 +26,30 @@ class MessageLookup extends MessageLookupByLibrary {
       "You must accept the terms and conditions.",
     ),
     "account": MessageLookupByLibrary.simpleMessage("My Account"),
+    "addressRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your address",
+    ),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "cityRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your city",
+    ),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists for this email.",
+    ),
+    "emailInvalid": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email address",
+    ),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email",
+    ),
+    "empty_cart": MessageLookupByLibrary.simpleMessage(
+      "No products in the cart",
+    ),
+    "floorRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter floor and apartment details",
+    ),
+    "fullNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your full name",
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
@@ -36,6 +57,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
       "  Network request failed. Please check your internet connection and try again.",
+    ),
+    "phoneInvalid": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid phone number",
+    ),
+    "phoneRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number",
     ),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "unknownError": MessageLookupByLibrary.simpleMessage(

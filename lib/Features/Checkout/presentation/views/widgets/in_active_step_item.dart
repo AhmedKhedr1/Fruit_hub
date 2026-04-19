@@ -10,7 +10,7 @@ class InActiveStepItem extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: Color(0xffF2F3F3),
-          radius: 12,
+          radius: 14,
           child: Text(index, style: TextStyless.semiBold13),
         ),
         SizedBox(
@@ -18,7 +18,7 @@ class InActiveStepItem extends StatelessWidget {
         ),
         Text(
           title,
-          style: TextStyless.semiBold13.copyWith(color: Color(0xffAAAAAA)),
+          style: TextStyless.semiBold16.copyWith(color: Color(0xffAAAAAA)),
         )
       ],
     );

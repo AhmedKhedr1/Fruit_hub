@@ -84,7 +84,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                           .CreateUserWithEmailAndPassword(
                               email, password, username);
                     } else {
-                      BuildErrorBar(
+                      ShowErrorBar(
                           context, S.current.acceptTermsError, Colors.red);
                     }
                   } else {
