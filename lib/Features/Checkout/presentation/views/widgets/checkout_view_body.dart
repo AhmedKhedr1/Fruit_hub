@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
+import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
+import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/checkout_steps.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/checkout_steps_page_view.dart';
+import 'package:fruit_hub/generated/l10n.dart';
 
 class CheckoutViewBody extends StatefulWidget {
   const CheckoutViewBody({super.key});
@@ -12,6 +16,9 @@ class CheckoutViewBody extends StatefulWidget {
 
 class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   late PageController pageController;
+  GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  ValueNotifier<AutovalidateMode> valueListenable =
+      ValueNotifier(AutovalidateMode.disabled);
   @override
   void initState() {
     pageController = PageController();
@@ -28,6 +35,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   @override
   void dispose() {
     pageController.dispose();
+    valueListenable.dispose();
     super.dispose();
   }
 
@@ -49,13 +57,19 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
             height: 32,
           ),
           Expanded(
-              child: CheckoutStepsPageView(pageController: pageController)),
+              child: CheckoutStepsPageView(
+            pageController: pageController,
+            formkey: _formkey,
+            valueListenable: valueListenable,
+          )),
           CustomButton(
               title: getnextbuttonTitle(currentPageIndex),
               onpressed: () {
-                pageController.animateToPage(currentPageIndex + 1,
-                    duration: Duration(milliseconds: 100),
-                    curve: Curves.bounceIn);
+                if (currentPageIndex == 0) {
+                  _handleShippingSectionValdition(context);
+                } else if (currentPageIndex == 1) {
+                  _handlAddressValdition();
+                }
               }),
           SizedBox(
             height: 40,
@@ -63,6 +77,18 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         ],
       ),
     );
+  }
+
+  void _handleShippingSectionValdition(BuildContext context) {
+    if (context.read<OrderEntity>().payWihtCash != null) {
+      pageController.animateToPage(currentPageIndex + 1,
+          duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
+    } else {
+      ShowErrorBar(
+        context,
+        S.current.select_payment_method,
+      );
+    }
   }
 
   String getnextbuttonTitle(int currentPageIndex) {
@@ -75,6 +101,16 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         return " تأكيد الطلب";
       default:
         return "التالي";
+    }
+  }
+
+  void _handlAddressValdition() {
+    if (_formkey.currentState!.validate()) {
+      _formkey.currentState!.save();
+      pageController.animateToPage(currentPageIndex + 1,
+          duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
+    } else {
+      valueListenable.value = AutovalidateMode.always;
     }
   }
 }

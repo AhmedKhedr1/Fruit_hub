@@ -19,7 +19,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
         if (state is SigninSucces) {
           GoRouter.of(context).go(AppRouter.KMainview);
         } else if (state is SigninFailure) {
-          ShowErrorBar(context, state.message, Colors.red);
+          ShowErrorBar(context, state.message);
         }
       },
       builder: (context, state) {

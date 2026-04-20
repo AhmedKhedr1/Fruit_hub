@@ -46,10 +46,10 @@ class CartViewBody extends StatelessWidget {
                       .isNotEmpty) {
                     GoRouter.of(context).push(
                       AppRouter.KCheckoutview,
-                      extra: context.read<CartCubit>().cartEntitey.cartItems,
+                      extra: context.read<CartCubit>().cartEntitey,
                     );
                   } else {
-                    ShowErrorBar(context, S.current.empty_cart, Colors.black);
+                    ShowErrorBar(context, S.current.empty_cart);
                   }
                 }),
           );

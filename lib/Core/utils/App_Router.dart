@@ -12,7 +12,7 @@ import 'package:fruit_hub/Features/ProductDetails/presentation/views/reviews_vie
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
 import 'package:fruit_hub/Features/Splash/Presentation/Views/SplashView.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/best_selling_view.dart';
-import 'package:fruit_hub/Features/cart/domain/entities/cart_item_entitey.dart';
+import 'package:fruit_hub/Features/cart/domain/entities/cart_entitey.dart';
 import 'package:fruit_hub/Features/cart/presentation/cubits/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hub/Features/cart/presentation/views/cart_view.dart';
 import 'package:fruit_hub/Features/onboarding/Presentation/Views/Onboarding_View.dart';
@@ -72,13 +72,13 @@ abstract class AppRouter {
         );
       },
     ),
-   GoRoute(
-  path: KCheckoutview,
-  builder: (context, state) {
-    final cartItems = state.extra as List<CartItemEntitey>;
-    return CheckoutView(cartitems: cartItems);
-  },
-),
+    GoRoute(
+      path: KCheckoutview,
+      builder: (context, state) {
+        final cartEntitey = state.extra as CartEntitey;
+        return CheckoutView(cartEntitey: cartEntitey);
+      },
+    ),
     GoRoute(
       path: KProfileview,
       builder: (context, state) => ProfileView(),

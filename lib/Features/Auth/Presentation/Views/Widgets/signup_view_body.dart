@@ -85,7 +85,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                               email, password, username);
                     } else {
                       ShowErrorBar(
-                          context, S.current.acceptTermsError, Colors.red);
+                        context,
+                        S.current.acceptTermsError,
+                      );
                     }
                   } else {
                     setState(() {

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
+import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/step_item.dart';
+import 'package:fruit_hub/generated/l10n.dart';
 
 class CheckoutSteps extends StatelessWidget {
   const CheckoutSteps(
@@ -18,9 +22,13 @@ class CheckoutSteps extends StatelessWidget {
           return Expanded(
             child: GestureDetector(
               onTap: () {
-                pageController.animateToPage(index,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeIn);
+                if (context.read<OrderEntity>().payWihtCash != null) {
+                  pageController.animateToPage(index,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeIn);
+                } else {
+                  ShowErrorBar(context, S.current.select_payment_method);
+                }
               },
               child: StepItem(
                 isActive: index <= currentPageIndex,

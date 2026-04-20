@@ -65,6 +65,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "من فضلك أدخل رقم الهاتف",
     ),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+    "select_payment_method": MessageLookupByLibrary.simpleMessage(
+      "يرجى تحديد طريقة الدفع",
+    ),
     "unknownError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ، يرجى المحاولة مرة أخرى.",
     ),

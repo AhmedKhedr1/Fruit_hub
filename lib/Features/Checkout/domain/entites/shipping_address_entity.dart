@@ -1,5 +1,5 @@
 class ShippingAddressEntity {
-  final String name, email, address, city, phoneNum, addressDetails;
+   String name, email, address, city, phoneNum, addressDetails;
 
   ShippingAddressEntity(
       {required this.name,
