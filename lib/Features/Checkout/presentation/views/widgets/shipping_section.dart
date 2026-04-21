@@ -25,7 +25,7 @@ class _ShippingSectionState extends State<ShippingSection>
           subtitle: 'التسليم من المكان',
           price:
               (context.read<OrderEntity>().cartEntitey.calculateTotalPrice() +
-                      40)
+                      30)
                   .toString(),
           isSelected: selectedIndex == 0,
           onTap: () {

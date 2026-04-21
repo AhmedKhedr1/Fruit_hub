@@ -28,7 +28,7 @@ class AddressInputSection extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   validatormessage: S.current.fullNameRequired,
                   onSaved: (value) {
-                    context.read<OrderEntity>().shippingAddressEntity!.name =
+                    context.read<OrderEntity>().shippingAddressEntity.name =
                         value!;
                   },
                 ),
@@ -40,19 +40,7 @@ class AddressInputSection extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   validatormessage: S.current.emailRequired,
                   onSaved: (value) {
-                    context.read<OrderEntity>().shippingAddressEntity!.email =
-                        value!;
-                  },
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                CustomTextFormField(
-                  hint: 'العنوان',
-                  keyboardType: TextInputType.text,
-                  validatormessage: S.current.addressRequired,
-                  onSaved: (value) {
-                    context.read<OrderEntity>().shippingAddressEntity!.address =
+                    context.read<OrderEntity>().shippingAddressEntity.email =
                         value!;
                   },
                 ),
@@ -64,7 +52,19 @@ class AddressInputSection extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   validatormessage: S.current.cityRequired,
                   onSaved: (value) {
-                    context.read<OrderEntity>().shippingAddressEntity!.city =
+                    context.read<OrderEntity>().shippingAddressEntity.city =
+                        value!;
+                  },
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                CustomTextFormField(
+                  hint: 'العنوان',
+                  keyboardType: TextInputType.text,
+                  validatormessage: S.current.addressRequired,
+                  onSaved: (value) {
+                    context.read<OrderEntity>().shippingAddressEntity.address =
                         value!;
                   },
                 ),
@@ -74,12 +74,10 @@ class AddressInputSection extends StatelessWidget {
                 CustomTextFormField(
                   hint: 'رقم الطابق , رقم الشقه ..',
                   keyboardType: TextInputType.text,
-                  validatormessage: S.current.floorRequired,
+                  validatormessage: S.current.addressRequired,
                   onSaved: (value) {
-                    context
-                        .read<OrderEntity>()
-                        .shippingAddressEntity!
-                        .addressDetails = value!;
+                    context.read<OrderEntity>().shippingAddressEntity.floor =
+                        value!;
                   },
                 ),
                 SizedBox(
@@ -90,10 +88,8 @@ class AddressInputSection extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   validatormessage: S.current.phoneRequired,
                   onSaved: (value) {
-                    context
-                        .read<OrderEntity>()
-                        .shippingAddressEntity!
-                        .phoneNum = value!;
+                    context.read<OrderEntity>().shippingAddressEntity.phoneNum =
+                        value!;
                   },
                 )
               ],

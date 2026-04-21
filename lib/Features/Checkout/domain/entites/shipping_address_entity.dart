@@ -1,11 +1,14 @@
 class ShippingAddressEntity {
-   String name, email, address, city, phoneNum, addressDetails;
+  String? name, email, address, city, phoneNum, floor;
 
   ShippingAddressEntity(
-      {required this.name,
-      required this.email,
-      required this.address,
-      required this.city,
-      required this.phoneNum,
-      required this.addressDetails});
+      {this.name,
+      this.email,
+      this.address,
+      this.city,
+      this.phoneNum,
+      this.floor});
+  String tostring() {
+    return "$city $address $floor ";
+  }
 }

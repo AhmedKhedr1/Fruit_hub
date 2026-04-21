@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/cubits/products_cubit/products_cubit.dart';
-import 'package:fruit_hub/Core/repos/product_repo.dart';
+import 'package:fruit_hub/Core/repos/product_repo/product_repo.dart';
 import 'package:fruit_hub/Core/services/get_it_services.dart';
 import 'package:fruit_hub/Core/widgets/build_app_bar.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/widgets/best_selling_view_body.dart';

@@ -3,10 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
+import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
+import 'package:provider/provider.dart';
 
 class ShippingAddressWidget extends StatelessWidget {
-  const ShippingAddressWidget({super.key});
-
+  const ShippingAddressWidget({super.key, required this.pageController});
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,14 +37,21 @@ class ShippingAddressWidget extends StatelessWidget {
                 width: 8,
               ),
               Text(
-                'شارع النيل، مبنى رقم ١٢٣',
+                context.read<OrderEntity>().shippingAddressEntity.tostring(),
                 style: TextStyless.regular16.copyWith(color: Color(0xff4E5556)),
               ),
               Spacer(),
-              Image.asset(
-                Assets.Edit,
-                height: 16,
-                width: 16,
+              GestureDetector(
+                onTap: () {
+                  pageController.animateToPage(1,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeIn);
+                },
+                child: Image.asset(
+                  Assets.Edit,
+                  height: 16,
+                  width: 16,
+                ),
               ),
               SizedBox(
                 width: 6,

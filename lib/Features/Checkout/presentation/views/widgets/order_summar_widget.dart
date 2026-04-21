@@ -1,7 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
+import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
 
 class OrderSummryWidget extends StatelessWidget {
   const OrderSummryWidget({
@@ -10,6 +12,10 @@ class OrderSummryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    num orderprice =
+        context.read<OrderEntity>().cartEntitey.calculateTotalPrice();
+    num shippingPrice = context.read<OrderEntity>().payWihtCash! ? 30 : 0;
+    num totalPrice = orderprice + shippingPrice;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -36,7 +42,7 @@ class OrderSummryWidget extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '150 جنيه',
+                    '${orderprice.toString()} جنيه',
                     style: TextStyless.semiBold16
                         .copyWith(color: Color(0xff0C0D0D)),
                   )
@@ -54,7 +60,7 @@ class OrderSummryWidget extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '30جنية',
+                    '${shippingPrice.toString()} جنيه',
                     style: TextStyless.semiBold13
                         .copyWith(color: Color(0xff4E5556)),
                   )
@@ -75,7 +81,7 @@ class OrderSummryWidget extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '180 جنيه',
+                    '${totalPrice.toString()} جنيه',
                     style:
                         TextStyless.bold16.copyWith(color: Color(0xff0C0D0D)),
                   )
