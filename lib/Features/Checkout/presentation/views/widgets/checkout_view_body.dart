@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
 import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
+import 'package:fruit_hub/Features/Checkout/presentation/manager/add_order_cubit/add_order_cubit.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/checkout_steps.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/checkout_steps_page_view.dart';
 import 'package:fruit_hub/generated/l10n.dart';
@@ -69,6 +70,9 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                   _handleShippingSectionValdition(context);
                 } else if (currentPageIndex == 1) {
                   _handlAddressValdition();
+                }else{
+                  var orderentity=context.read<OrderEntity>();
+                  context.read<AddOrderCubit>().addOrder(order:orderentity );
                 }
               }),
           SizedBox(
@@ -84,7 +88,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
       pageController.animateToPage(currentPageIndex + 1,
           duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
     } else {
-      ShowErrorBar(
+      ShowBar(
         context,
         S.current.select_payment_method,
       );

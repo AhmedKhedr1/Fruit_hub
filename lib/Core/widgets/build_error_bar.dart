@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void ShowErrorBar(BuildContext context, String message) {
+void ShowBar(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     content: Text(message),
     duration: Duration(milliseconds: 550),

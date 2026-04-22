@@ -27,7 +27,7 @@ class CheckoutSteps extends StatelessWidget {
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeIn);
                 } else {
-                  ShowErrorBar(context, S.current.select_payment_method);
+                  ShowBar(context, S.current.select_payment_method);
                 }
               },
               child: StepItem(

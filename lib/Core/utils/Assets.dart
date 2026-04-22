@@ -46,4 +46,17 @@ abstract class Assets {
   static const String trash = 'assets/images/trash.png';
   static const String location = 'assets/images/location.png';
   static const String Edit = 'assets/images/edit.png';
+  static const String logout = 'assets/images/logout.png';
+  static const String camera = 'assets/images/camera.png';
+  static const String arrowright = 'assets/images/arrow-right.png';
+  static const String empty_wallet = 'assets/images/empty-wallet.png';
+
+  static const String global = 'assets/images/global.png';
+
+  static const String favourite = 'assets/images/heart_green_icon.png';
+
+  static const String aboutUsIcon = 'assets/images/info-circle.png';
+
+  static const String payment = 'assets/images/payment.png';
+  static const String user_green_icon = 'assets/images/user_green_icon.png';
 }

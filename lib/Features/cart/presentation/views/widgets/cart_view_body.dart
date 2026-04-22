@@ -49,7 +49,7 @@ class CartViewBody extends StatelessWidget {
                       extra: context.read<CartCubit>().cartEntitey,
                     );
                   } else {
-                    ShowErrorBar(context, S.current.empty_cart);
+                    ShowBar(context, S.current.empty_cart);
                   }
                 }),
           );

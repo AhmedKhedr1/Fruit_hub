@@ -7,6 +7,7 @@ import 'package:fruit_hub/Core/widgets/build_app_bar.dart';
 import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
 import 'package:fruit_hub/Features/Checkout/domain/entites/shipping_address_entity.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/manager/add_order_cubit/add_order_cubit.dart';
+import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/add_order_cubit_bloc_builder.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/widgets/checkout_view_body.dart';
 import 'package:fruit_hub/Features/cart/domain/entities/cart_entitey.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +44,7 @@ class _CheckoutViewState extends State<CheckoutView> {
             title: 'الشحن', leading: true, notification: true),
         body: Provider.value(
           value: orderEntity,
-          child: CheckoutViewBody(),
+          child: AddOrderCubitBlocBuilder(child: CheckoutViewBody()),
         ),
       ),
     );
