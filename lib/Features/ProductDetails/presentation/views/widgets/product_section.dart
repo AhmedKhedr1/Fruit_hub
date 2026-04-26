@@ -15,7 +15,9 @@ class ProductDescription extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 21),
       child: Text(
         description,
-        style: TextStyless.regular16.copyWith(color: Color(0xff979899),),
+        style: TextStyless.regular16.copyWith(
+          color: Color(0xff979899),
+        ),
       ),
     );
   }

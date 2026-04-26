@@ -6,10 +6,11 @@ class HaveAndDonotHaveAccount extends StatelessWidget {
   const HaveAndDonotHaveAccount({
     super.key,
     required this.P1OfText,
-    required this.p2OfText,required this.onTap,
+    required this.p2OfText,
+    required this.onTap,
   });
   final String P1OfText, p2OfText;
-final Function() onTap;
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return Row(

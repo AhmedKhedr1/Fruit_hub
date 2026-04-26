@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 
 class ProfileOptionItem extends StatelessWidget {
-  const ProfileOptionItem({
-    super.key,
-    required this.title,
-    required this.leading,
-    required this.trailling,
-    required this.onTap
-  });
+  const ProfileOptionItem(
+      {super.key,
+      required this.title,
+      required this.leading,
+      required this.trailling,
+      required this.onTap});
   final String title, leading, trailling;
   final void Function() onTap;
   @override
@@ -25,7 +24,8 @@ class ProfileOptionItem extends StatelessWidget {
               ),
               Text(
                 title,
-                style: TextStyless.semiBold16.copyWith(color: Color(0xff949D9E)),
+                style:
+                    TextStyless.semiBold16.copyWith(color: Color(0xff949D9E)),
               ),
               Spacer(),
               Image.asset(trailling)

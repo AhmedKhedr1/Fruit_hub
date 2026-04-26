@@ -40,7 +40,8 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             title: 'من نحن',
             leading: Assets.aboutUsIcon,
-            trailling: Assets.arrowright, onTap: () {  },
+            trailling: Assets.arrowright,
+            onTap: () {},
           )
         ],
       ),

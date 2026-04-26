@@ -11,8 +11,7 @@ class ShippingAddressModel {
       this.phoneNum,
       this.floor});
 
-  factory ShippingAddressModel.fromEntity(
-      ShippingAddressEntity entity) {
+  factory ShippingAddressModel.fromEntity(ShippingAddressEntity entity) {
     return ShippingAddressModel(
       name: entity.name,
       email: entity.email,
@@ -22,14 +21,14 @@ class ShippingAddressModel {
       floor: entity.floor,
     );
   }
-  tojson(){
+  tojson() {
     return {
-      'name':name,
-      'email':email,
-      'address':address,
-      'city':city,
-      'phoneNum':phoneNum,
-      'floor':floor
+      'name': name,
+      'email': email,
+      'address': address,
+      'city': city,
+      'phoneNum': phoneNum,
+      'floor': floor
     };
   }
 }

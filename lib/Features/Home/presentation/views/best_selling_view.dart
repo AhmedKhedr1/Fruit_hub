@@ -16,7 +16,8 @@ class BestSellingView extends StatelessWidget {
       appBar: buildAppBar(
         context,
         title: 'الأكثر مبيعًا',
-        leading: true, notification: true,
+        leading: true,
+        notification: true,
       ),
       body: BlocProvider(
         create: (context) => ProductsCubit(getIt<ProductRepo>()),

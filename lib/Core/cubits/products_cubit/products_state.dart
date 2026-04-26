@@ -4,6 +4,7 @@ part of 'products_cubit.dart';
 sealed class ProductsState {}
 
 final class ProductsInitial extends ProductsState {}
+
 final class ProductsLoading extends ProductsState {}
 
 final class ProductsFailure extends ProductsState {
@@ -11,9 +12,9 @@ final class ProductsFailure extends ProductsState {
 
   ProductsFailure(this.errorMessage);
 }
+
 final class ProductsSuccess extends ProductsState {
   final List<ProductEntitey> products;
 
   ProductsSuccess(this.products);
 }
-

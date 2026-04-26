@@ -49,7 +49,7 @@ class OnboardingPageView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-              'ابحث وتسوق',
+                'ابحث وتسوق',
                 style: TextStyless.bold23,
               ),
             ],

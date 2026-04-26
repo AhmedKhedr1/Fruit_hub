@@ -48,7 +48,7 @@ class PageViewItem extends StatelessWidget {
                 child: GestureDetector(
                     child: TextButton(
                   onPressed: () {
-                     Prefs.setBool(KisOnBoardingViewSeen, true);
+                    Prefs.setBool(KisOnBoardingViewSeen, true);
                     GoRouter.of(context).go(AppRouter.Kloginview);
                   },
                   child: Text(

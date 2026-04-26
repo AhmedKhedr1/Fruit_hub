@@ -1,2 +1,2 @@
-const KisOnBoardingViewSeen='isOnBoardingViewSeen';
-const KuserData='kuserdata';
+const KisOnBoardingViewSeen = 'isOnBoardingViewSeen';
+const KuserData = 'kuserdata';

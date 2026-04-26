@@ -21,14 +21,14 @@ class ProductGridview extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-  GoRouter.of(context).push(
-    AppRouter.KProductDetailsview,
-    extra: {
-      'product': products[index],
-      'cubit': context.read<CartCubit>(),
-    },
-  );
-},
+            GoRouter.of(context).push(
+              AppRouter.KProductDetailsview,
+              extra: {
+                'product': products[index],
+                'cubit': context.read<CartCubit>(),
+              },
+            );
+          },
           child: FruitItem(
             productEntitey: products[index],
           ),
