@@ -22,63 +22,63 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "acceptTermsError": MessageLookupByLibrary.simpleMessage(
-          "يجب عليك الموافقة على الشروط والأحكام.",
-        ),
-        "account": MessageLookupByLibrary.simpleMessage("حسابي"),
-        "addressRequired": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل العنوان",
-        ),
-        "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
-        "cityRequired": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل المدينة",
-        ),
-        "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
-          "يوجد حساب مسجل بهذا البريد الإلكتروني.",
-        ),
-        "emailInvalid": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل بريد إلكتروني صحيح",
-        ),
-        "emailRequired": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل البريد الإلكتروني",
-        ),
-        "empty_cart": MessageLookupByLibrary.simpleMessage(
-          "لا يوجد منتجات في السلة",
-        ),
-        "floorRequired": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل رقم الطابق والشقة",
-        ),
-        "fullNameRequired": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل اسمك بالكامل",
-        ),
-        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
-        "invalidEmail": MessageLookupByLibrary.simpleMessage(
-          "البريد الإلكتروني غير صالح.",
-        ),
-        "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
-          "  فشل طلب الشبكة. يرجى التحقق من اتصال الإنترنت الخاص بك والمحاولة مرة أخرى.",
-        ),
-        "phoneInvalid": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل رقم هاتف صحيح",
-        ),
-        "phoneRequired": MessageLookupByLibrary.simpleMessage(
-          "من فضلك أدخل رقم الهاتف",
-        ),
-        "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
-        "select_payment_method": MessageLookupByLibrary.simpleMessage(
-          "يرجى تحديد طريقة الدفع",
-        ),
-        "unknownError": MessageLookupByLibrary.simpleMessage(
-          "حدث خطأ، يرجى المحاولة مرة أخرى.",
-        ),
-        "userNotFound": MessageLookupByLibrary.simpleMessage(
-          "  لا يوجد مستخدم لهذا البريد الإلكتروني.",
-        ),
-        "weakPassword": MessageLookupByLibrary.simpleMessage(
-          "كلمة المرور ضعيفة جدًا.",
-        ),
-        "wrongPassword": MessageLookupByLibrary.simpleMessage(
-          " كلمة المرور المقدمة خاطئة لهذا المستخدم.",
-        ),
-      };
+    "acceptTermsError": MessageLookupByLibrary.simpleMessage(
+      "يجب عليك الموافقة على الشروط والأحكام.",
+    ),
+    "account": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "addressRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل العنوان",
+    ),
+    "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+    "cityRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل المدينة",
+    ),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "يوجد حساب مسجل بهذا البريد الإلكتروني.",
+    ),
+    "emailInvalid": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل بريد إلكتروني صحيح",
+    ),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل البريد الإلكتروني",
+    ),
+    "empty_cart": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد منتجات في السلة",
+    ),
+    "floorRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل رقم الطابق والشقة",
+    ),
+    "fullNameRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل اسمك بالكامل",
+    ),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني غير صالح.",
+    ),
+    "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
+      "  فشل طلب الشبكة. يرجى التحقق من اتصال الإنترنت الخاص بك والمحاولة مرة أخرى.",
+    ),
+    "phoneInvalid": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل رقم هاتف صحيح",
+    ),
+    "phoneRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل رقم الهاتف",
+    ),
+    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+    "select_payment_method": MessageLookupByLibrary.simpleMessage(
+      "يرجى تحديد طريقة الدفع",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ، يرجى المحاولة مرة أخرى.",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "  لا يوجد مستخدم لهذا البريد الإلكتروني.",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور ضعيفة جدًا.",
+    ),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage(
+      " كلمة المرور المقدمة خاطئة لهذا المستخدم.",
+    ),
+  };
 }

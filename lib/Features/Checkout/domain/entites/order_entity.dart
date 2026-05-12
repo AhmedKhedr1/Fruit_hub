@@ -8,12 +8,14 @@ class OrderEntity {
   bool? payWihtCash;
   ShippingAddressEntity shippingAddressEntity;
   final String uId;
+  final String status;
 
   OrderEntity(
       {required this.cartEntitey,
       this.payWihtCash,
       required this.shippingAddressEntity,
-      required this.uId});
+      required this.uId,
+      this.status = 'pending'});
 
   double calculateshippingCost() {
     if (payWihtCash!) {

@@ -21,7 +21,7 @@ class CartEntitey {
     for (var cartItem in cartItems) {
       totalprice += cartItem.calculateTotalPrice();
     }
-    return totalprice;
+    return double.parse(totalprice.toStringAsFixed(2));
   }
 
   bool isExist(ProductEntitey product) {

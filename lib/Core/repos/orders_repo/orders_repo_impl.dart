@@ -14,9 +14,11 @@ class OrdersRepoImpl extends OrdersRepo {
   Future<Either<Failure, void>> addOrder(
       {required OrderEntity orderEntity}) async {
     try {
+      var orderModel = OrderModel.fromentity(orderEntity);
       await firestoreService.addData(
           path: BackendEndpoint.addOrders,
-          data: OrderModel.fromentity(orderEntity).tojson());
+          documentId: orderModel.orderID,
+          data: orderModel.tojson());
       return right(null);
     } catch (e) {
       return Left(ServerFailure(e.toString()));

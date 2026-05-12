@@ -9,7 +9,10 @@ class CartItemEntitey extends Equatable {
 
   CartItemEntitey({required this.productEntity, this.count = 0});
   num calculateTotalPrice() {
-    return productEntity.price * count;
+    return double.parse(
+      (productEntity.price * count).toStringAsFixed(2),
+    );
+    ;
   }
 
   num calculateTotalWeight() {
