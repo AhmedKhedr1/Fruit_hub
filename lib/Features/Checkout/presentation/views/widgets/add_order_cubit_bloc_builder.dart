@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/manager/add_order_cubit/add_order_cubit.dart';
+import 'package:go_router/go_router.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class AddOrderCubitBlocBuilder extends StatelessWidget {
@@ -13,6 +15,10 @@ class AddOrderCubitBlocBuilder extends StatelessWidget {
       listener: (context, state) {
         if (state is AddOrderSuccess) {
           ShowBar(context, 'تمت العمليه بنجاح');
+          Future.delayed(
+            Duration(seconds: 1),
+            () => GoRouter.of(context).go(AppRouter.KMainview),
+          );
         }
         if (state is AddOrderFailure) {
           ShowBar(context, state.errorMessage);

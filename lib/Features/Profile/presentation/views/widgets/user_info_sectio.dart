@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/helper/get_user.dart';
 import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 
@@ -40,14 +41,14 @@ class UserInfoSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'أحمد ياسر',
+                  getUserData().name,
                   style: TextStyless.bold16.copyWith(color: Color(0xff131F46)),
                 ),
                 SizedBox(
                   height: 4,
                 ),
                 Text(
-                  'mail@mail.com',
+                  getUserData().email,
                   style:
                       TextStyless.regular16.copyWith(color: Color(0xff888FA0)),
                 ),

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
+import 'package:fruit_hub/Core/utils/app_keys.dart';
 import 'package:fruit_hub/Core/widgets/Custom_Button.dart';
 import 'package:fruit_hub/Core/widgets/build_error_bar.dart';
 import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
@@ -75,7 +76,11 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                   _handlAddressValdition();
                 } else {
                   var orderentity = context.read<OrderEntity>();
-                  context.read<AddOrderCubit>().addOrder(order: orderentity);
+                  if (orderentity.payWihtCash == true) {
+                    context.read<AddOrderCubit>().addOrder(order: orderentity);
+                  } else {
+                    _processPayment(context);
+                  }
                 }
               }),
           SizedBox(
@@ -123,24 +128,27 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
 
   // ignore: unused_element
   void _processPayment(BuildContext context) {
+    var addordercubit = context.read<AddOrderCubit>();
     var orderEntity = context.read<OrderEntity>();
     PaypalPaymentEntity paypalPaymentEntity =
         PaypalPaymentEntity.fromEntity(orderEntity);
     Navigator.of(context).push(MaterialPageRoute(
       builder: (BuildContext context) => PaypalCheckoutView(
         sandboxMode: true,
-        clientId: "",
-        secretKey: "",
-        transactions:  [
-          paypalPaymentEntity.toJson()
-        ],
+        clientId: Kpaypalclientid,
+        secretKey: Kpaypalsecretkey,
+        transactions: [paypalPaymentEntity.toJson()],
         note: "Contact us for any questions on your order.",
         onSuccess: (Map params) async {
-          print("onSuccess: $params");
+          addordercubit.addOrder(order: orderEntity);
+          Navigator.pop(context);
         },
         onError: (error) {
-          print("onError: $error");
+          if (!mounted) return;
+
           Navigator.pop(context);
+
+          ShowBar(context, error.toString());
         },
         onCancel: () {
           print('cancelled:');

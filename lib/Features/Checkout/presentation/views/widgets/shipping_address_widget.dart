@@ -36,9 +36,14 @@ class ShippingAddressWidget extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              Text(
-                context.read<OrderEntity>().shippingAddressEntity.tostring(),
-                style: TextStyless.regular16.copyWith(color: Color(0xff4E5556)),
+              Expanded(
+                child: Text(
+                  context.read<OrderEntity>().shippingAddressEntity.tostring(),
+                  style:
+                      TextStyless.regular16.copyWith(color: Color(0xff4E5556)),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               Spacer(),
               GestureDetector(

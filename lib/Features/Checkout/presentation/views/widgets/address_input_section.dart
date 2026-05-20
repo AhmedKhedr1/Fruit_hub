@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/Core/helper/get_user.dart';
 import 'package:fruit_hub/Core/widgets/CustomTextFormField.dart';
 import 'package:fruit_hub/Features/Checkout/domain/entites/order_entity.dart';
 import 'package:fruit_hub/generated/l10n.dart';
@@ -25,6 +26,7 @@ class AddressInputSection extends StatelessWidget {
                 ),
                 CustomTextFormField(
                   hint: 'الاسم كامل',
+                  initialValue: getUserData().name,
                   keyboardType: TextInputType.text,
                   validatormessage: S.current.fullNameRequired,
                   onSaved: (value) {
@@ -37,6 +39,7 @@ class AddressInputSection extends StatelessWidget {
                 ),
                 CustomTextFormField(
                   hint: 'البريد الإلكتروني',
+                  initialValue: getUserData().email,
                   keyboardType: TextInputType.text,
                   validatormessage: S.current.emailRequired,
                   onSaved: (value) {

@@ -10,14 +10,14 @@ class PaypalPaymentEntity {
 
   PaypalPaymentEntity({this.amount, this.description, this.itemList});
 
-   toJson() => {
+  toJson() => {
         'amount': amount?.toJson(),
         'description': description,
         'item_list': itemList?.toJson(),
       };
-        factory PaypalPaymentEntity.fromEntity(OrderEntity entity) {
+  factory PaypalPaymentEntity.fromEntity(OrderEntity entity) {
     return PaypalPaymentEntity(
-        amount:Amount.fromEntity(entity),
+        amount: Amount.fromEntity(entity),
         description: 'Payment Description',
         itemList: ItemList.fromentity(items: entity.cartEntitey.cartItems));
   }

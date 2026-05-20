@@ -8,9 +8,7 @@ class ProductAttributeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 12, bottom: 12, right: 16, left: 24),
-      width: 163,
-      height: 80,
+      padding: EdgeInsets.only(top: 12, bottom: 12, right: 10, left: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           border: Border.all(width: 1.5, color: Color(0xffF1F1F5))),
@@ -25,7 +23,7 @@ class ProductAttributeCard extends StatelessWidget {
                 style: TextStyless.bold16.copyWith(color: Color(0xff23AA49)),
               ),
               SizedBox(
-                height: 12,
+                height: 8,
               ),
               Text(
                 attrebutie.subtitle,
