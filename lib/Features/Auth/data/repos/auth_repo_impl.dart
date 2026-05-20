@@ -120,4 +120,10 @@ class AuthRepoImpl extends AuthRepo {
     var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
     await Prefs.setString(KuserData, jsonData);
   }
+
+  @override
+  Future<void> signOut() async {
+    Prefs.remove(KuserData);
+    return await FirebaseAuth.instance.signOut();
+  }
 }
