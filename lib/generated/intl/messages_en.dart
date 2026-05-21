@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
       "  Network request failed. Please check your internet connection and try again.",
     ),
+    "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "phoneInvalid": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),

@@ -36,7 +36,7 @@ class ProductRatingRow extends StatelessWidget {
             width: 9,
           ),
           GestureDetector(
-            onTap: () => GoRouter.of(context).push(AppRouter.reviewsview),
+            onTap: () => GoRouter.of(context).push(AppRouter.Kreviewsview),
             child: Text(
               'المراجعه',
               style: TextStyless.bold16.copyWith(color: AppColors.primaryColor),

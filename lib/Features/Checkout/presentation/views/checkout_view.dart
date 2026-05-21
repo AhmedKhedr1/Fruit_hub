@@ -41,7 +41,7 @@ class _CheckoutViewState extends State<CheckoutView> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: buildAppBar(context,
-            title: 'الشحن', leading: true, notification: true),
+            title: 'الشحن', leading: true, notification: false),
         body: Provider.value(
           value: orderEntity,
           child: AddOrderCubitBlocBuilder(child: CheckoutViewBody()),

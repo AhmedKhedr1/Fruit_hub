@@ -7,6 +7,7 @@ import 'package:fruit_hub/Features/Auth/Presentation/Views/signup_view.dart';
 import 'package:fruit_hub/Features/Checkout/presentation/views/checkout_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/home_view.dart';
 import 'package:fruit_hub/Features/Home/presentation/views/main_view.dart';
+import 'package:fruit_hub/Features/Home/presentation/views/notifications_view.dart';
 import 'package:fruit_hub/Features/ProductDetails/presentation/views/product_details_view.dart';
 import 'package:fruit_hub/Features/ProductDetails/presentation/views/reviews_view.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/profile_view.dart';
@@ -32,7 +33,8 @@ abstract class AppRouter {
   static const String KProfileview = '/Profileview';
   static const String KCartview = '/Cartview';
   static const String KProductDetailsview = '/ProductDetailsview';
-  static const String reviewsview = '/ReviewsView';
+  static const String Kreviewsview = '/ReviewsView';
+  static const String Knotificationview = '/NotificationView';
 
 //
   static final router = GoRouter(routes: [
@@ -101,8 +103,12 @@ abstract class AppRouter {
       },
     ),
     GoRoute(
-      path: reviewsview,
+      path: Kreviewsview,
       builder: (context, state) => ReviewsView(),
+    ),
+    GoRoute(
+      path: Knotificationview,
+      builder: (context, state) => NotificationsView(),
     ),
   ]);
 }

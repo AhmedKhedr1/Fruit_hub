@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkrequestfailed": MessageLookupByLibrary.simpleMessage(
       "  فشل طلب الشبكة. يرجى التحقق من اتصال الإنترنت الخاص بك والمحاولة مرة أخرى.",
     ),
+    "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "phoneInvalid": MessageLookupByLibrary.simpleMessage(
       "من فضلك أدخل رقم هاتف صحيح",
     ),
