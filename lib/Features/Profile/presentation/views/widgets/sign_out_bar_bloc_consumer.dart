@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/Core/utils/App_Router.dart';
 import 'package:fruit_hub/Features/Profile/presentation/manager/cubit/sign_out_cubit.dart';
 import 'package:fruit_hub/Features/Profile/presentation/views/widgets/logout_button.dart';
+import 'package:fruit_hub/Features/Profile/presentation/views/widgets/show_logout_dialog.dart';
 import 'package:go_router/go_router.dart';
 
 class SignOutBarBlocConsumer extends StatelessWidget {
@@ -16,6 +16,7 @@ class SignOutBarBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignOutCubit, SignOutState>(
       listener: (context, state) {
         if (state is SignOutSuccess) {
+          context.go(AppRouter.Kloginview);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('تم تسجيل الخروج بنجاح'),
@@ -38,8 +39,7 @@ class SignOutBarBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return LogoutButton(
           onTap: () {
-            context.read<SignOutCubit>().signOut();
-            GoRouter.of(context).go(AppRouter.Kloginview);
+            showLogoutDialog(context);
           },
         );
       },

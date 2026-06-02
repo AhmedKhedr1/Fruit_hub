@@ -10,7 +10,6 @@ class NotificationsViewBody extends StatefulWidget {
 
 class _NotificationsViewBodyState extends State<NotificationsViewBody> {
   @override
-  @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
@@ -21,9 +20,7 @@ class _NotificationsViewBodyState extends State<NotificationsViewBody> {
               (index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 6),
-                  child: NotificationCard(
-                    
-                  ),
+                  child: NotificationCard(),
                 );
               },
             ),
