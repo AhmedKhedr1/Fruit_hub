@@ -19,7 +19,7 @@ class AddressInputSection extends StatelessWidget {
           return Form(
             autovalidateMode: value,
             key: formkey,
-            child: Column(
+            child: ListView(
               children: [
                 SizedBox(
                   height: 24,

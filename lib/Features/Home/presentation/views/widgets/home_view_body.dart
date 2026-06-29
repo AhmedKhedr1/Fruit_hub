@@ -34,7 +34,15 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               SizedBox(
                 height: 16,
               ),
-              SearchTextField(),
+              SearchTextField(
+                onChanged: (value) {
+                  value.isEmpty
+                      ? context.read<ProductsCubit>().getBestSelleingProducts()
+                      : context
+                          .read<ProductsCubit>()
+                          .searchProducts(value);
+                },
+              ),
               SizedBox(
                 height: 12,
               ),

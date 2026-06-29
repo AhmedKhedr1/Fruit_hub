@@ -32,7 +32,15 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
                 SizedBox(
                   height: 16,
                 ),
-                SearchTextField(),
+                SearchTextField(
+                  onChanged: (value) {
+                    value.isEmpty
+                        ? context
+                            .read<ProductsCubit>()
+                            .getBestSelleingProducts()
+                        : context.read<ProductsCubit>().searchProducts(value);
+                  },
+                ),
                 SizedBox(
                   height: 16,
                 ),

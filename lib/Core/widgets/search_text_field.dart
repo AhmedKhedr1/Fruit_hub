@@ -3,13 +3,14 @@ import 'package:fruit_hub/Core/utils/Assets.dart';
 import 'package:fruit_hub/Core/utils/Text_Styless.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
-
+  SearchTextField({super.key, this.onChanged});
+  void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 40,
       child: TextField(
+        onChanged: onChanged,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           hintText: 'ابحث عن.......',
