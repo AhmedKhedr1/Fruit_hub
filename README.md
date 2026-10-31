@@ -1,4 +1,6 @@
-<img width="1459" height="912" alt="5_1" src="https://github.com/user-attachments/assets/8de73e1b-cf25-45d3-b46f-99bf10215129" /><h1 align="center">🍎 Fruit Hub</h1>
+![Fruit Hub Banner](<img width="1459" height="912" alt="5_1" src="https://github.com/user-attachments/assets/0301734f-f4ba-44c4-a200-f938f33ba25f" />) 
+
+<h1 align="center">🍎 Fruit Hub</h1>
 
 <p align="center">
   A cross-platform e-commerce app built with Flutter and Firebase, featuring product browsing, Google authentication, PayPal payments, and order management.
@@ -15,20 +17,17 @@
 
 ---
 
-<p align="center">
-  <img src="<img width="1459" height="912" alt="5_1" src="https://github.com/user-attachments/assets/4685edd8-1a74-4092-bcc5-1f24a084c5f5" />" width="100%"/>
-</p>
-
 ## 📸 Screenshots
 
 ### 🔐 Authentication
-<img src="<img width="1438" height="901" alt="6" src="https://github.com/user-attachments/assets/02ffca90-306a-47d0-a7b8-032dbbeb0b82" />" width="100%"/>
+![Authentication]([screenshots/auth.png](https://github.com/user-attachments/assets/02ffca90-306a-47d0-a7b8-032dbbeb0b82))
 
 ### 🏠 Home & Products
-<img src="<img width="1450" height="904" alt="7" src="https://github.com/user-attachments/assets/a7a5baec-0441-45c7-9cdc-ac304e7c11c3" />" width="100%"/>
+![Home]([screenshots/home.png](https://github.com/user-attachments/assets/a7a5baec-0441-45c7-9cdc-ac304e7c11c3))
 
 ### 🛒 Cart & Checkout
-<img src="<img width="1444" height="907" alt="8" src="https://github.com/user-attachments/assets/d80c516f-2dbf-4dfc-b732-6187ef5c348b" />" width="100%"/>
+![Checkout]([screenshots/checkout.png](https://github.com/user-attachments/assets/d80c516f-2dbf-4dfc-b732-6187ef5c348b))
+
 
 ## ✨ Features
 
