@@ -20,14 +20,13 @@
 ## 📸 Screenshots
 
 ### 🔐 Authentication
-![Authentication]([screenshots/auth.png](https://github.com/user-attachments/assets/02ffca90-306a-47d0-a7b8-032dbbeb0b82))
+![Authentication](https://github.com/user-attachments/assets/02ffca90-306a-47d0-a7b8-032dbbeb0b82)
 
 ### 🏠 Home & Products
-![Home]([screenshots/home.png](https://github.com/user-attachments/assets/a7a5baec-0441-45c7-9cdc-ac304e7c11c3))
+![Home](https://github.com/user-attachments/assets/a7a5baec-0441-45c7-9cdc-ac304e7c11c3)
 
 ### 🛒 Cart & Checkout
-![Checkout]([screenshots/checkout.png](https://github.com/user-attachments/assets/d80c516f-2dbf-4dfc-b732-6187ef5c348b))
-
+![Checkout](https://github.com/user-attachments/assets/d80c516f-2dbf-4dfc-b732-6187ef5c348b)
 
 ## ✨ Features
 
