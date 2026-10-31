@@ -1,4 +1,5 @@
-![Fruit Hub Banner](<img width="1459" height="912" alt="5_1" src="https://github.com/user-attachments/assets/0301734f-f4ba-44c4-a200-f938f33ba25f" />) 
+![Fruit Hub Banner](<img width="1459" height="912" alt="5_1" src="https://github.com/user-attachments/assets/c80c65f0-7db1-42f8-8e37-632636d31748" />)
+
 
 <h1 align="center">🍎 Fruit Hub</h1>
 
