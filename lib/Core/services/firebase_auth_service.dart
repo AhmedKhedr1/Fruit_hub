@@ -75,17 +75,17 @@ class FirebaseAuthService {
     return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
 
-  Future<User> signInWithFacebook() async {
-    // Trigger the sign-in flow
-    final LoginResult loginResult = await FacebookAuth.instance.login();
+  // Future<User> signInWithFacebook() async {
+  //   // Trigger the sign-in flow
+  //   final LoginResult loginResult = await FacebookAuth.instance.login();
 
-    final OAuthCredential facebookAuthCredential =
-        FacebookAuthProvider.credential(loginResult.accessToken!.token);
+  //   final OAuthCredential facebookAuthCredential =
+  //       FacebookAuthProvider.credential(loginResult.accessToken!.token);
 
-    return (await FirebaseAuth.instance
-            .signInWithCredential(facebookAuthCredential))
-        .user!;
-  }
+  //   return (await FirebaseAuth.instance
+  //           .signInWithCredential(facebookAuthCredential))
+  //       .user!;
+  // }
 
   bool isLoggedin() {
     return FirebaseAuth.instance.currentUser != null;

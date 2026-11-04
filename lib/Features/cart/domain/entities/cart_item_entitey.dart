@@ -12,7 +12,6 @@ class CartItemEntitey extends Equatable {
     return double.parse(
       (productEntity.price * count).toStringAsFixed(2),
     );
-    ;
   }
 
   num calculateTotalWeight() {
@@ -28,6 +27,5 @@ class CartItemEntitey extends Equatable {
   }
 
   @override
-  // TODO: implement props
   List<Object?> get props => [productEntity];
 }

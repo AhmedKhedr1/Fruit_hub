@@ -34,11 +34,11 @@ dependencies:
   dots_indicator: ^4.0.1
   equatable: ^2.0.8
   firebase_auth: ^6.1.4
-  firebase_core: ^4.2.1
+  firebase_core: ^4.15.2
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
-  flutter_facebook_auth: ^6.0.0
+  flutter_facebook_auth: ^7.3.2
   flutter_launcher_icons: ^0.14.4
   flutter_localizations:
     sdk: flutter

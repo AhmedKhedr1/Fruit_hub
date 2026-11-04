@@ -56,13 +56,14 @@ class DefaultFirebaseOptions {
     projectId: 'fruit-hub-b706a',
     storageBucket: 'fruit-hub-b706a.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDO6MmiHvMv4_xJ5ajx5W5oR4gitl1Qm-I',
     appId: '1:347459708654:ios:be5e31b939471a190d75ff',
     messagingSenderId: '347459708654',
     projectId: 'fruit-hub-b706a',
     storageBucket: 'fruit-hub-b706a.firebasestorage.app',
+    androidClientId: '347459708654-nufef4bld3cstb88cqoavglujpnj1u8b.apps.googleusercontent.com',
+    iosClientId: '347459708654-kqe9pu5g63lhv7h8h36888hg0jlqc8pi.apps.googleusercontent.com',
     iosBundleId: 'com.example.fruitHub',
   );
 }

@@ -47,3 +47,4 @@ app.*.map.json
 
 
 lib/Core/utils/app_keys.dart
+android/fastlane/.env
